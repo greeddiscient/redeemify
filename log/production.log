@@ -1,0 +1,16 @@
+Compiled application.js  (2ms)  (pid 18262)
+Compiled jquery.js  (15ms)  (pid 18262)
+Compiled jquery_ujs.js  (0ms)  (pid 18262)
+Compiled sessions.js  (179ms)  (pid 18262)
+Compiled application.css  (0ms)  (pid 18262)
+Compiled layout.css  (0ms)  (pid 18262)
+Warning. Error encountered while saving cache /home/saasbook/Desktop/304-omniauth-identity/auth-before/tmp/cache/sass/2481f1c57251fdc631082dc358279da0a7f7707e/sessions.css.scssc: can't dump anonymous class #<Class:0x9bdb9fc>
+Compiled sessions.css  (3ms)  (pid 18262)
+Compiled application.js  (1ms)  (pid 18239)
+Compiled jquery.js  (16ms)  (pid 18239)
+Compiled jquery_ujs.js  (0ms)  (pid 18239)
+Compiled sessions.js  (184ms)  (pid 18239)
+Compiled application.css  (1ms)  (pid 18239)
+Compiled layout.css  (0ms)  (pid 18239)
+Warning. Error encountered while saving cache /home/saasbook/Desktop/304-omniauth-identity/auth-before/tmp/cache/sass/2481f1c57251fdc631082dc358279da0a7f7707e/sessions.css.scssc: can't dump anonymous class #<Class:0x9b00898>
+Compiled sessions.css  (5ms)  (pid 18239)
