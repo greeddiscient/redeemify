@@ -9737,3 +9737,1386 @@ Served asset /sessions.js - 304 Not Modified (0ms)
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 07:37:11 -0300
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:47:13 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 124ms (Views: 64.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:14 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:14 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:14 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:14 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:14 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-03-09 22:47:18 -0300
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2015-03-09 22:47:22 -0300
+
+
+Started GET "/auth/twitter/callback?oauth_token=HdKRoUUEzH10gHRy24Jqc00q3XYaMMN9&oauth_verifier=9lbhFnCuVE07EptjZvDn97wVZKYHSQ6E" for 127.0.0.1 at 2015-03-09 22:47:30 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"oauth_token"=>"HdKRoUUEzH10gHRy24Jqc00q3XYaMMN9", "oauth_verifier"=>"9lbhFnCuVE07EptjZvDn97wVZKYHSQ6E", "provider"=>"twitter"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'twitter' AND "users"."uid" = '818779219' LIMIT 1[0m
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 25ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (6.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Rendered sessions/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 26ms (Views: 14.9ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:31 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:47:33 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-03-09 22:47:39 -0300
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2015-03-09 22:47:41 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:12 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:53:30 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 22:55:18 -0300
+Served asset /openid_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 111ms (Views: 46.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /layout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /sessions.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 22:55:40 -0300
+Served asset /openid_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /openid_64.png - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/github_64.png" for 127.0.0.1 at 2015-03-09 22:55:41 -0300
+Served asset /github_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/github_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-09 22:55:43 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/auth/open_id" for 127.0.0.1 at 2015-03-09 22:55:48 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/open_id"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-03-09 22:55:55 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:03:10 -0300
+Served asset /openid_64.png - 404 Not Found (8ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-09 23:03:12 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:04:35 -0300
+Served asset /openid_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-09 23:04:37 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:05:45 -0300
+Served asset /openid_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-09 23:05:46 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:07:45 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 100ms (Views: 48.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /openid_64.png - 404 Not Found (4ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.8ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:07:46 -0300
+Served asset /openid_64.png - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-09 23:07:48 -0300
+
+
+Started GET "/auth/github/callback?code=715c1ffaf8705bfaeccf&state=ec20e0a7fd6c9f9938ebcd56b184db89a22617045438a9c2" for 127.0.0.1 at 2015-03-09 23:07:48 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"715c1ffaf8705bfaeccf", "state"=>"ec20e0a7fd6c9f9938ebcd56b184db89a22617045438a9c2", "provider"=>"github"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'github' AND "users"."uid" = '10640842' LIMIT 1[0m
+  [1m[35mSQL (15.0ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", "12345"], ["created_at", Tue, 10 Mar 2015 02:07:49 UTC +00:00], ["name", "Thai Nguyen Truong"], ["provider", "github"], ["uid", "10640842"], ["updated_at", Tue, 10 Mar 2015 02:07:49 UTC +00:00]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 65ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+  Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Rendered sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:07:49 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/openid_64.png" for 127.0.0.1 at 2015-03-09 23:08:02 -0300
+Served asset /openid_64.png - 404 Not Found (5ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/openid_64.png"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:42:56 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:44:46 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-09 23:44:48 -0300
+
+ActionController::RoutingError (No route matches [GET] "/auth/amazon"):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:45:48 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 118ms (Views: 50.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:45:49 -0300
+Served asset /layout.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:45:49 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:45:49 -0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:45:49 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:45:49 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-09 23:45:50 -0300
+
+
+Started GET "/auth/amazon/callback?code=ANYRlYFKDQnvuXhZHdYA&scope=profile+postal_code&state=c5fcf8ff16d2869f8fa9224964df9d403add8c4c1a4dd49f" for 127.0.0.1 at 2015-03-09 23:46:39 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ANYRlYFKDQnvuXhZHdYA", "scope"=>"profile postal_code", "state"=>"c5fcf8ff16d2869f8fa9224964df9d403add8c4c1a4dd49f", "provider"=>"amazon"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1[0m
+  [1m[35mSQL (25.0ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", "12345"], ["created_at", Tue, 10 Mar 2015 02:46:40 UTC +00:00], ["name", "Thai"], ["provider", "amazon"], ["uid", "amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A"], ["updated_at", Tue, 10 Mar 2015 02:46:40 UTC +00:00]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 59ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-09 23:46:40 -0300
+  Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Rendered sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:46:40 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:46:41 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:41 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:41 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:41 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-09 23:46:48 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 113ms (Views: 50.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+Served asset /layout.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:07:45 -0300
+Served asset /sessions.css - 304 Not Modified (4ms)
+
+
+Started GET "/auth/youtube" for 127.0.0.1 at 2015-03-10 00:07:48 -0300
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2015-03-10 00:08:57 -0300
+
+
+Started GET "/auth/twitter" for 127.0.0.1 at 2015-03-10 00:09:00 -0300
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-10 00:09:03 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:09 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/google_oauth2" for 127.0.0.1 at 2015-03-10 00:09:10 -0300
+
+
+Started GET "/auth/google_oauth2/callback?state=940a9c129b021c2bebfd642ac6b4d1ae7113a0255bcfa897&code=4/LmC8ikP1cPCjOsR0B69XwapBeyH9vev0OCN7VoESC-M.opKSm111Z6MTEnp6UAPFm0GGpVADmAI" for 127.0.0.1 at 2015-03-10 00:09:10 -0300
+
+OAuth2::Error ({"errors"=>[{"domain"=>"usageLimits", "reason"=>"accessNotConfigured", "message"=>"Access Not Configured. The API (Google+ API) is not enabled for your project. Please use the Google Developers Console to update your configuration.", "extendedHelp"=>"https://console.developers.google.com"}], "code"=>403, "message"=>"Access Not Configured. The API (Google+ API) is not enabled for your project. Please use the Google Developers Console to update your configuration."}: 
+{
+ "error": {
+  "errors": [
+   {
+    "domain": "usageLimits",
+    "reason": "accessNotConfigured",
+    "message": "Access Not Configured. The API (Google+ API) is not enabled for your project. Please use the Google Developers Console to update your configuration.",
+    "extendedHelp": "https://console.developers.google.com"
+   }
+  ],
+  "code": 403,
+  "message": "Access Not Configured. The API (Google+ API) is not enabled for your project. Please use the Google Developers Console to update your configuration."
+ }
+}
+):
+  
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-10 00:09:13 -0300
+
+
+Started GET "/auth/github/callback?code=7d2309535f5f5618f429&state=9aa44cf99b9e0daf3426176f29ded63b257d4a2c6df817fc" for 127.0.0.1 at 2015-03-10 00:09:14 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"7d2309535f5f5618f429", "state"=>"9aa44cf99b9e0daf3426176f29ded63b257d4a2c6df817fc", "provider"=>"github"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'github' AND "users"."uid" = '10640842' LIMIT 1[0m
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 45ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-10 00:09:14 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (12.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Rendered sessions/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 30ms (Views: 12.3ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:15 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:15 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:15 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:15 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:15 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:09:17 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 00:19:24 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 142ms (Views: 93.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 67ms (Views: 53.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /layout.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 00:19:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:25:01 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 148ms (Views: 72.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:02 -0300
+Served asset /layout.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:02 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:02 -0300
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:02 -0300
+Served asset /sessions.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:02 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (14ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-10 02:25:05 -0300
+
+
+Started GET "/auth/amazon/callback?code=ANTNLpjpGvcYVqeUmSFI&scope=profile+postal_code&state=6b5104e0ae0d44dc63797c2548699bac3d89075d4b865297" for 127.0.0.1 at 2015-03-10 02:25:30 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ANTNLpjpGvcYVqeUmSFI", "scope"=>"profile postal_code", "state"=>"6b5104e0ae0d44dc63797c2548699bac3d89075d4b865297", "provider"=>"amazon"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1[0m
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 44ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-10 02:25:31 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (6.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+Rendered sessions/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:32 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:32 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:32 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:32 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:32 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:39 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:41 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:46 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:25:48 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:49 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:49 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:49 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:25:49 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:25:49 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:31:08 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 112ms (Views: 46.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:09 -0300
+Served asset /layout.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:09 -0300
+Served asset /sessions.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:09 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:09 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-10 02:31:11 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:17 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2015-03-10 02:31:18 -0300
+
+
+Started GET "/auth/github/callback?code=3ec4fa1c2192de2e131d&state=698110e6f62a4dd2072f9e912fa24e5a38e3e277288ffd93" for 127.0.0.1 at 2015-03-10 02:31:18 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3ec4fa1c2192de2e131d", "state"=>"698110e6f62a4dd2072f9e912fa24e5a38e3e277288ffd93", "provider"=>"github"}
+
+***** Debugger requested, but was not available (ensure ruby-debug is listed in Gemfile/installed as gem): Start server with --debugger to enable *****
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'github' AND "users"."uid" = '10640842' LIMIT 1[0m
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 43ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-10 02:31:19 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (5.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+Rendered sessions/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 30ms (Views: 15.9ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:19 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:19 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:19 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:20 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:20 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:31:21 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (14.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (6.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (2.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20111203202102)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20111203202102')[0m
+Migrating to AddColumnsToUsers (20150309074935)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "code" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20150309074935')[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 129ms (Views: 50.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 23ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:29 -0300
+Served asset /sessions.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-10 02:44:30 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-10 02:44:30 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-10 02:44:30 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20111203202102)
+Migrating to AddColumnsToUsers (20150309074935)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
