@@ -15,11 +15,15 @@
   </p>
 
   
-  <%= form_tag("/sessions/offer", method: "get") do %>
-    <%= label_tag(:code, "Enter your code Here:") %>
-    <%= text_field_tag(:code) %>
-    <%= submit_tag("Submit") %>
-  <% end %>
+
+
+  <form action="sessions#show" method="POST">
+    <p>
+    <label for="task_name"><strong>Enter your code Here:</strong></label><br />
+      <%= text_field :code , :size => 20 %>
+    </p>
+    <input type="submit">
+  </form>
 
 
 
@@ -28,7 +32,7 @@
 
 
 <% else %>
-  <strong><h1>Welcome to Redeemify</h1></strong>
+  <strong><h1>Welcome to Redeemify, Vendor</h1></strong>
 
 
   <p><strong>Please Sign in through one of these services:</strong></p>
@@ -57,7 +61,7 @@
       Amazon
     </a>
 
-    <p><%= link_to "Vendor Login", "/vendors/new" %></p>
+    <%= link_to "Back", new_session_path %>
 
   </div>
 <% end %>

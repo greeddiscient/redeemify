@@ -1,16 +1,5 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1426038654.786478:@value{I"
-class:EFI"BundledAsset;
-FI"id;
-F"%5c2ba58659e4e1874beab247242b24f6I"logical_path;
-FI"jquery_ujs.js;
-TI"pathname;
-FI"m/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.1.2/vendor/assets/javascripts/jquery_ujs.js;
-TI"content_type;
-FI"application/javascript;
-FI"
-mtime;
-FI"2015-03-08T23:46:10-03:00;
-FI"	body;
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1426038655.1167147:@value{	I"length:EFifDI"digest;
+F"%7ff8081cf49a3a4eeec339d138bdefcdI"source;
 FI"fD(function($, undefined) {
 
 /**
@@ -458,15 +447,5 @@ FI"fD(function($, undefined) {
 
 })( jQuery );
 ;
-FI"asset_paths;
-F[I"m/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.1.2/vendor/assets/javascripts/jquery_ujs.js;
-TI"dependency_paths;
-F[{I"	path;
-FI"m/home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/jquery-rails-3.1.2/vendor/assets/javascripts/jquery_ujs.js;
-TI"
-mtime;
-FIu:	Time"É€´b¥¸
-:@_zoneI"ADT;
-T:nano_numiK:nano_deni:submicro"3:offsetiþÐÕI"hexdigest;
-F"%7ff8081cf49a3a4eeec339d138bdefcdI"_version;
-F"%d3399da1890ef54eecbcf24324b9c72a
+FI"_version;
+F"%5c2ba58659e4e1874beab247242b24f6

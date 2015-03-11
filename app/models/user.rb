@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.code = "12345"
+      user.code = ""
     end
   end
 end

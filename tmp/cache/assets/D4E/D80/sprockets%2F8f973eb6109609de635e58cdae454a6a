@@ -1,11 +1,6 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1426038654.763595:@value{	I"length:EFiI"digest;
-F"%a4c5021bea41917c9c528ae86bb2179eI"source;
-FI"/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
-*/
-body {
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1426038654.7648919:@value{	I"length:EFiWI"digest;
+F"%03b5146f979fea68440292c895b5497eI"source;
+FI"Wbody {
   background-color: #4B7399;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
@@ -82,23 +77,6 @@ a {
 form .field, form .actions {
   margin: 12px 0;
 }
-/* line 4, ../../app/assets/stylesheets/sessions.css.scss */
-.auth_providers {
-  height: 90px;
-}
-
-/* line 8, ../../app/assets/stylesheets/sessions.css.scss */
-.auth_provider {
-  float: left;
-  text-decoration: none;
-  margin-right: 20px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-/* line 15, ../../app/assets/stylesheets/sessions.css.scss */
-.auth_provider img {
-  display: block;
-}
 ;
 FI"_version;
-F"%0176d69e7b268aff5b555eb128c87da2
+F"%aa83edfa397e512d275a6381fa668d8f
