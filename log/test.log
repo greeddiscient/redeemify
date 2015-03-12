@@ -3010,3 +3010,219 @@ Completed 302 Found in 2ms
   Parameters: {"provider"=>"amazon"}
 Redirected to http://test.host/
 Completed 302 Found in 0ms
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (30.0ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 44ms
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 4ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 4ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 1ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:38:30 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 0ms
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 38ms
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 4ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 1ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:15 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 0ms
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 36ms (Views: 32.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (25.6ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 39ms
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 4ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 1ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:39:38 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 0ms
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+  Processing by SessionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  Processing by SessionsController#new as HTML
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" [0m
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (29.3ms)[0m  INSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 41ms
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" 
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 4ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 1ms
+  Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"amazon"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = '24323423' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00], ["name", "Thanh"], ["provider", "amazon"], ["uid", "24323423"], ["updated_at", Thu, 12 Mar 2015 23:40:21 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/sessions/new
+Completed 302 Found in 3ms
+  Processing by SessionsController#destroy as HTML
+  Parameters: {"provider"=>"amazon"}
+Redirected to http://test.host/
+Completed 302 Found in 0ms

@@ -9,6 +9,8 @@ gem 'rails3-generators'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0'
+  gem 'simplecov'
+  gem 'database_cleaner'
 end
 group :production do
   gem 'pg'
