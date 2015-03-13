@@ -5,8 +5,8 @@ Feature: User Login (Story 2)
 	I want to be able to login to my existing account with a third party authentication to see my offers
 
 Scenario: successful login after entering valid credentials
-
+	
 	Given I am on the user login page
-	When I enter my credentials
-	Then I should be on the offer page
-	And I should see "Login Successful"
+	And I have already registered with "Facebook"
+    Then I am signed in with "Facebook"
+	Then I can see "Offer page"

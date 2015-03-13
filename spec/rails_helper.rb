@@ -27,6 +27,24 @@ OmniAuth.config.test_mode = true
  
   OmniAuth.config.add_mock(:amazon, omniauth_hash)
 
+omniauth_hash2 = { 'provider' => 'github',
+                    'uid' => '24323423',
+                    'info' => {
+                        'name' => 'Thanh',
+                        'email' => 'tiome123@gmail.com',
+                        'nickname' => 'Tyem'
+                    },
+                    'extra' => {'raw_info' =>
+                                    { 'location' => 'UC Berkeley',
+                                      'gravatar_id' => '123456789'
+                                    }
+                    }
+  }
+ 
+  OmniAuth.config.add_mock(:github, omniauth_hash2)
+
+
+
 
 
 

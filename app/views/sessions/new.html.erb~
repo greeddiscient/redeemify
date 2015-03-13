@@ -15,15 +15,11 @@
   </p>
 
   
-
-
-  <form action="sessions#show" method="POST">
-    <p>
-    <label for="task_name"><strong>Enter your code Here:</strong></label><br />
-      <%= text_field :code , :size => 20 %>
-    </p>
-    <input type="submit">
-  </form>
+  <%= form_tag("/sessions/offer", method: "get") do %>
+    <%= label_tag(:code, "Enter your code Here:") %>
+    <%= text_field_tag(:code) %>
+    <%= submit_tag("Submit") %>
+  <% end %>
 
 
 
@@ -32,7 +28,7 @@
 
 
 <% else %>
-  <strong><h1>Welcome to Redeemify, Vendor</h1></strong>
+  <strong><h1>Welcome to Redeemify</h1></strong>
 
 
   <p><strong>Please Sign in through one of these services:</strong></p>
@@ -51,7 +47,7 @@
       Twitter
     </a>
 
-    <a href="/auth/github" class="auth_provider">
+    <a href="/sessions/enter" class="auth_provider">
       <%= image_tag "github_64.png", size: "64x64", alt: "Github" %>
       GitHub
     </a>
@@ -60,8 +56,6 @@
       <%= image_tag "amazon_64.png", :size => "64x64", :alt => "amazon" %>
       Amazon
     </a>
-
-    <%= link_to "Back", new_session_path %>
 
   </div>
 <% end %>
