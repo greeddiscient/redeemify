@@ -44,7 +44,7 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
   	if current_path.respond_to? :should
       current_url.should include(third_party)
   	else
-      assert (current_path.include?(third_party), "Not on correct login page.")
+      assert current_path.include?(third_party), "Not on correct login page."
     end
   else
     if current_path.respond_to? :should

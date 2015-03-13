@@ -8,8 +8,11 @@ gem 'rails', '3.1.3'
 gem 'rails3-generators'
 group :development, :test do
   gem 'sqlite3'
+  gem 'cucumber-rails'
+  gem 'capybara'
   gem 'rspec-rails', '~> 3.0'
   gem 'simplecov'
+  gem 'test-unit'
   gem 'database_cleaner'
 end
 group :production do
