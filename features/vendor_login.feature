@@ -1,4 +1,4 @@
-Feature: Vendor Login (Story 3)
+Feature: Vendor Login (Story 4)
 
 	As a provider/vendor
 	So that I can login to resend the codes
@@ -12,5 +12,13 @@ Scenario: successful login after entering valid credentials
 
 	Given I am on the user login page
 	Then I am signed in as a vendor "vendor1" and user ID "12345" with "facebook"
-	Then show me the page
 	Then I should be on the vendor page
+
+Scenario: succesful logout after logged in
+
+	Given I am on the user login page
+	Then I am signed in as a vendor "vendor1" and user ID "12345" with "facebook"
+	Then show me the page
+	Then I press "Log out" link
+	Then I can see "Signed out!"
+

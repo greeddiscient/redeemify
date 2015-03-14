@@ -51,6 +51,11 @@ And /^I have already registered with "([^"]*)"$/ do |provider|
   click_link("logout-link")
 end
 
+And /^I entered invalid credentials with "([^"]*)"$/ do |provider|
+  set_invalid_omniauth()
+  click_link("#{provider.downcase}-auth")
+end
+
 Given /^(?:|I )can see "([^"]*)"$/ do |words|
   if page.respond_to? :should
     page.should have_content(words)
@@ -73,27 +78,8 @@ end
 
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
-
-  login = false
-  if page_name.include? "login"
-    login = true
-  end
-
-  if login
-    text = page_name.split(" ")
-    third_party = text[1].strip
-    if current_path.respond_to? :should
-      current_url.should include(third_party)
-    else
-      assert current_path.include?(third_party), "Not on correct login page."
-    end
-  else
-    if current_path.respond_to? :should
-    current_path.should == path_to(page_name)
-  else
-    assert_equal path_to(page_name), current_path
-  end
-  end
+  current_path.respond_to? :should
+  current_path.should == path_to(page_name)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|

@@ -21627,630 +21627,1244 @@ Served asset /jquery.js - 304 Not Modified (6ms)
   [1m[36m (12.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
   [1m[35m (13.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
   [1m[36m (14.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 07:13:30 -0300
+  Processing by SessionsController#new as HTML
+  [1m[36mUser Load (14.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 149ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=5):
+  app/controllers/application_controller.rb:10:in `current_user'
+  app/controllers/sessions_controller.rb:5:in `new'
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 07:13:43 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:13:43 -0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:13:49 -0300
+  Processing by SessionsController#offer as HTML
+Rendered sessions/offer.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:13:49 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+  [1m[36m (32.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (16.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (7.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[36m (22.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.5ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (26.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (23.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (29.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (33.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (32.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (23.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (35.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 07:22:30 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 214ms (Views: 110.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:22:31 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 07:22:33 -0300
+
+
+Started GET "/auth/amazon/callback?code=ANzpwUeLffVEEbwvEnkC&scope=profile+postal_code&state=e2579ae4025598e2331ec974948705d05e643b9b849cca96" for 127.0.0.1 at 2015-03-13 07:22:56 -0300
+  Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ANzpwUeLffVEEbwvEnkC", "scope"=>"profile postal_code", "state"=>"e2579ae4025598e2331ec974948705d05e643b9b849cca96", "provider"=>"amazon"}
+  [1m[36mVendor Load (9.0ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AEGTZ4QMZGW2L3SIDWU6IARS5BCA' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AEGTZ4QMZGW2L3SIDWU6IARS5BCA' LIMIT 1
+  [1m[36mSQL (9.8ms)[0m  [1mINSERT INTO "users" ("code", "created_at", "name", "provider", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["code", ""], ["created_at", Fri, 13 Mar 2015 10:22:57 UTC +00:00], ["name", "Farandy Ramadhana"], ["provider", "amazon"], ["uid", "amzn1.account.AEGTZ4QMZGW2L3SIDWU6IARS5BCA"], ["updated_at", Fri, 13 Mar 2015 10:22:57 UTC +00:00]]
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 99ms
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-13 07:22:57 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 11.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:22:58 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:23:04 -0300
+  Processing by SessionsController#offer as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "code" = NULL, "updated_at" = '2015-03-13 10:23:04.069612' WHERE "users"."id" = 7
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Rendered sessions/offer.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 52ms (Views: 12.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:23:04 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-13 07:23:14 -0300
+  Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+Redirected to http://localhost:3000/sessions/offer
+Completed 302 Found in 48ms
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:23:14 -0300
+  Processing by SessionsController#offer as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1
+Rendered sessions/offer.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 11.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:23:15 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+  [1m[36m (30.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (21.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+  Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+Redirected to http://localhost:3000/sessions/offer
+Completed 302 Found in 12ms
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+  Processing by SessionsController#offer as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m
+Rendered sessions/offer.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 65ms (Views: 13.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+Served asset /layout.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+Served asset /sessions.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:56 -0300
+Served asset /sessions.js - 304 Not Modified (6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+  Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:27:58 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+  Processing by SessionsController#offer as HTML
+Rendered sessions/offer.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:28:15 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+  [1m[36m (26.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (23.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (14.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (31.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (19.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (44.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (16.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (16.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (15.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (17.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (26.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (30.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (27.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (33.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 15:17:27 -0300
+  Processing by SessionsController#new as HTML
+  [1m[36mUser Load (8.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 404 Not Found in 105ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=5):
+  app/controllers/application_controller.rb:10:in `current_user'
+  app/controllers/sessions_controller.rb:5:in `new'
+
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 75ms (Views: 70.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+Served asset /layout.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+Served asset /jquery.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 15:17:36 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+  Processing by SessionsController#offer as HTML
+Rendered sessions/offer.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 15:17:51 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+  [1m[36m (22.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (34.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (14.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (21.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (27.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (14.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (32.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (14.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (25.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.2ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (15.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (11.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+  Processing by SessionsController#offer as HTML
+Rendered sessions/offer.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+Served asset /layout.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:38 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+Served asset /sessions.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 15:32:43 -0300
+Served asset /sessions.js - 304 Not Modified (5ms)
+  [1m[36m (25.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (24.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (14.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (15.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (30.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (14.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (34.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (14.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.9ms)[0m  select sqlite_version(*)
+  [1m[36m (32.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (15.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (33.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (14.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (16.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (33.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (22.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (15.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (14.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (15.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (14.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (32.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (11.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (44.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (25.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (14.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (15.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (17.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (15.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (21.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (14.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (34.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (19.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (10.5ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (15.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (28.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (30.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (14.5ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (15.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (33.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.2ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (25.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (29.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (14.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (26.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (26.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.2ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (10.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (15.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (10.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (45.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (24.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (14.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (26.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (33.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.5ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (10.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (25.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (30.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (22.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (15.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (29.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (14.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (29.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (13.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (38.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (15.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (33.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (12.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (23.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (11.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (14.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (11.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (42.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (18.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (15.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (14.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (11.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (13.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (29.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (32.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (11.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (11.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (8.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (26.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (12.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (12.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (14.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (13.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (11.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-13 16:27:13 -0300
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 276ms (Views: 167.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 16:27:15 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 16:27:15 -0300
+Served asset /layout.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 16:27:15 -0300
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 16:27:15 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 16:27:15 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
+  [1m[36m (27.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (13.3ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (12.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (12.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (12.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (24.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (18.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
   [1m[36m (5.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (5.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (5.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (2.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (15.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (16.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (10.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (6.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (17.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
   [1m[36m (6.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (6.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (16.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (7.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (6.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (4.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (5.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (22.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (4.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (5.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (6.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-Connecting to database specified by database.yml
-  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (5.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (16.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (6.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (6.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (5.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (5.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-Connecting to database specified by database.yml
-  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (15.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (5.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (6.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (5.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-Connecting to database specified by database.yml
-  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (15.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (6.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (5.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-Connecting to database specified by database.yml
-  [1m[36m (1.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (14.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (7.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
   [1m[36m (5.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (5.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (5.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (5.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-Connecting to database specified by database.yml
-  [1m[36m (1.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (14.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (4.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (5.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (6.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-  [1m[36m (22.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (16.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (5.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (5.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (15.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (6.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (5.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (6.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (6.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (2.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (15.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (7.2ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
   [1m[36m (6.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (4.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (13.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (5.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (4.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (6.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (6.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
-  [1m[36m (5.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
-  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[36m (5.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
   [1m[35m (5.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
-  [1m[36m (6.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
-  [1m[36m (23.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (21.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.1ms)[0m  select sqlite_version(*)
-  [1m[36m (15.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[36m (16.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (22.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (15.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
   [1m[35m (6.6ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
   [1m[36m (6.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
   [1m[36m (5.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
-  [1m[36m (5.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
-  [1m[35m (5.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (5.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (5.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (6.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (5.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (6.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (5.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.1ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (5.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (3.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (13.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (5.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (6.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (4.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.5ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (5.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
+  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (20.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.0ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150313052019')[0m
+  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150309074935')
   [1m[36m (6.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111203202102')[0m
 Connecting to database specified by database.yml
-  [1m[36m (22.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (5.8ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[36m (16.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (6.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
   [1m[35m (5.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (5.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (4.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
+  [1m[35m (5.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
+  [1m[36m (5.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
+  [1m[35m (5.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
+Connecting to database specified by database.yml
+  [1m[36m (1.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (17.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (5.9ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (5.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (5.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
+  [1m[36m (6.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
+  [1m[35m (6.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
+Connecting to database specified by database.yml
+  [1m[36m (32.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (16.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
+  [1m[35m (5.7ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (6.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (5.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
+  [1m[36m (6.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
+  [1m[35m (6.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
+Connecting to database specified by database.yml
 
 
-Started GET "/" for 127.0.0.1 at 2015-03-13 07:54:17 -0300
+Started GET "/" for 127.0.0.1 at 2015-03-13 22:29:28 -0300
 Connecting to database specified by database.yml
 Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (31.5ms)
-Compiled layout.css  (0ms)  (pid 5020)
-Warning. Error encountered while saving cache /home/saasbook/Desktop/Redeemify3/redeemifyFra/Thai's redeemify/tmp/cache/sass/32d72f78830e25b007764b9ea38ecacbda197dcd/sessions.css.scssc: can't dump anonymous class #<Class:0x992c5e4>
-Compiled sessions.css  (11ms)  (pid 5020)
-Compiled application.css  (22ms)  (pid 5020)
-Compiled jquery.js  (2ms)  (pid 5020)
-Compiled jquery_ujs.js  (0ms)  (pid 5020)
-Compiled sessions.js  (205ms)  (pid 5020)
-Compiled application.js  (255ms)  (pid 5020)
-Completed 200 OK in 518.3ms (Views: 401.8ms | ActiveRecord: 32.7ms)
+  Rendered sessions/new.html.erb within layouts/application (29.0ms)
+Compiled layout.css  (0ms)  (pid 8021)
+Warning. Error encountered while saving cache /home/saasbook/Desktop/Thai's redeemify/tmp/cache/sass/e4b6a5e8feeae2f76e0c9d04a04fee6cd8a4908a/sessions.css.scssc: can't dump anonymous class #<Class:0xade30a0>
+Compiled sessions.css  (8ms)  (pid 8021)
+Compiled application.css  (19ms)  (pid 8021)
+Compiled jquery.js  (33ms)  (pid 8021)
+Compiled jquery_ujs.js  (0ms)  (pid 8021)
+Compiled sessions.js  (246ms)  (pid 8021)
+Compiled application.js  (299ms)  (pid 8021)
+Completed 200 OK in 521.4ms (Views: 441.3ms | ActiveRecord: 2.3ms)
 
 
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:54:18 -0300
-Served asset /layout.css - 304 Not Modified (15ms)
+Started GET "/" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9.5ms (Views: 9.4ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:54:18 -0300
-Served asset /sessions.css - 304 Not Modified (7ms)
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /layout.css - 304 Not Modified (5ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:54:18 -0300
-Served asset /jquery.js - 304 Not Modified (7ms)
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /sessions.js - 304 Not Modified (1ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:54:18 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:54:18 -0300
-Served asset /sessions.js - 304 Not Modified (5ms)
-Connecting to database specified by database.yml
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /jquery.js - 304 Not Modified (6ms)
 
 
-Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 07:55:16 -0300
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /sessions.css - 304 Not Modified (1ms)
 
 
-Started GET "/auth/amazon/callback?code=ANIhtmLuymdSIZQzJtbJ&scope=profile+postal_code&state=144ae0c6c6299d7e4d029c1d559c4377b3271956df864c2f" for 127.0.0.1 at 2015-03-13 07:55:30 -0300
-Processing by SessionsController#create as HTML
-  Parameters: {"code"=>"ANIhtmLuymdSIZQzJtbJ", "scope"=>"profile postal_code", "state"=>"144ae0c6c6299d7e4d029c1d559c4377b3271956df864c2f", "provider"=>"amazon"}
-  [1m[36mVendor Load (0.3ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AEQ6NQMSND4NODOLT3K5C2QM7C4Q' LIMIT 1[0m
-Redirected to http://localhost:3000/vendors/home
-Completed 302 Found in 53.6ms (ActiveRecord: 0.5ms)
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
 
 
-Started GET "/vendors/home" for 127.0.0.1 at 2015-03-13 07:55:31 -0300
-Processing by VendorsController#home as HTML
-  [1m[35mVendor Load (14.2ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1  [["id", 1]]
-  Rendered vendors/home.html.erb within layouts/application (0.8ms)
-Completed 200 OK in 22.2ms (Views: 5.3ms | ActiveRecord: 14.2ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:32 -0300
-Served asset /layout.css - 304 Not Modified (1ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:32 -0300
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:32 -0300
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
 Served asset /jquery.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:32 -0300
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:32 -0300
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:30 -0300
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/logout" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 22:29:32 -0300
+
+
+Started GET "/auth/amazon/callback?code=ANXgmKuQAgbiafTMuXcA&scope=profile+postal_code&state=b0cbc3956194a60a677a5f891aa77edaccb27de119b04ec4" for 127.0.0.1 at 2015-03-13 22:29:39 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ANXgmKuQAgbiafTMuXcA", "scope"=>"profile postal_code", "state"=>"b0cbc3956194a60a677a5f891aa77edaccb27de119b04ec4", "provider"=>"amazon"}
+  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1
+Redirected to http://localhost:3000/sessions/new
+Completed 302 Found in 45.5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/sessions/new" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to http://localhost:3000/sessions/offer
+Completed 302 Found in 5.8ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Processing by SessionsController#offer as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered sessions/offer.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 6.7ms (Views: 5.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:40 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Processing by SessionsController#destroy as HTML
 Redirected to http://localhost:3000/
 Completed 302 Found in 0.8ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
+Started GET "/" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.0ms)
-Completed 200 OK in 6.1ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5.9ms (Views: 5.6ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Served asset /layout.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (5ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:33 -0300
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (3.8ms)
-Completed 200 OK in 9.6ms (Views: 9.4ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (1ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:36 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 07:55:37 -0300
-
-
-Started GET "/auth/amazon/callback?code=ANsgWJBhalLoGZAJdueY&scope=profile+postal_code&state=c899f6ca9f5cd161f10304fc89c0b525a2372855745a2702" for 127.0.0.1 at 2015-03-13 07:55:43 -0300
-Processing by SessionsController#create as HTML
-  Parameters: {"code"=>"ANsgWJBhalLoGZAJdueY", "scope"=>"profile postal_code", "state"=>"c899f6ca9f5cd161f10304fc89c0b525a2372855745a2702", "provider"=>"amazon"}
-  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1[0m
-  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1
-Redirected to http://localhost:3000/sessions/new
-Completed 302 Found in 3.2ms (ActiveRecord: 0.3ms)
-
-
-Started GET "/sessions/new" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
-Processing by SessionsController#new as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
-Redirected to http://localhost:3000/sessions/offer
-Completed 302 Found in 2.0ms (ActiveRecord: 0.2ms)
-
-
-Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
-Processing by SessionsController#offer as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
-  Rendered sessions/offer.html.erb within layouts/application (7.6ms)
-Completed 200 OK in 12.7ms (Views: 11.5ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:44 -0300
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:43 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 22:29:44 -0300
+
+
+Started GET "/auth/amazon/callback?code=ANhbxgvNXYAnJxdGERXA&scope=profile+postal_code&state=8d5f47f48c295bf15c5c592ae94d066381cd54e29709cfcf" for 127.0.0.1 at 2015-03-13 22:29:57 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"ANhbxgvNXYAnJxdGERXA", "scope"=>"profile postal_code", "state"=>"8d5f47f48c295bf15c5c592ae94d066381cd54e29709cfcf", "provider"=>"amazon"}
+  [1m[35mVendor Load (0.2ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AEQ6NQMSND4NODOLT3K5C2QM7C4Q' LIMIT 1
+Redirected to http://localhost:3000/vendors/home
+Completed 302 Found in 6.0ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/vendors/home" for 127.0.0.1 at 2015-03-13 22:29:58 -0300
+Processing by VendorsController#home as HTML
+  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered vendors/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8.2ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:58 -0300
+Served asset /layout.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:29:59 -0300
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:59 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:59 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:29:59 -0300
 Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/logout" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
+Started GET "/logout" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Processing by SessionsController#destroy as HTML
 Redirected to http://localhost:3000/
 Completed 302 Found in 0.6ms (ActiveRecord: 0.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
+Started GET "/" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Processing by SessionsController#new as HTML
   Rendered sessions/new.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 4.0ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+Completed 200 OK in 3.5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
+Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Served asset /layout.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Served asset /sessions.css - 304 Not Modified (0ms)
 
 
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:47 -0300
-Served asset /jquery.js - 304 Not Modified (1ms)
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
+Served asset /sessions.js - 304 Not Modified (0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 9.9ms (Views: 9.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 22:30:00 -0300
 Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 07:55:50 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-Connecting to database specified by database.yml
-  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
-  [1m[35m (0.2ms)[0m  select sqlite_version(*)
-  [1m[36m (15.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "code" varchar(255)) [0m
-  [1m[35m (7.2ms)[0m  CREATE TABLE "vendors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime, "updated_at" datetime) 
-  [1m[36m (6.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
-  [1m[35m (5.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
-  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
-  [1m[35m (5.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150313052019')
-  [1m[36m (4.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150309074935')[0m
-  [1m[35m (7.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111203202102')
-
-
-Started GET "/" for 127.0.0.1 at 2015-03-13 08:00:12 -0300
-Connecting to database specified by database.yml
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (60.5ms)
-Completed 200 OK in 381.2ms (Views: 158.5ms | ActiveRecord: 51.3ms)
-
-
-Started GET "/" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 6.6ms (Views: 6.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /layout.css - 304 Not Modified (1ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /sessions.css - 304 Not Modified (1ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /jquery.js - 304 Not Modified (7ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (1ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /sessions.js - 304 Not Modified (1ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:15 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-Connecting to database specified by database.yml
-
-
-Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 08:00:20 -0300
-
-
-Started GET "/auth/amazon/callback?code=ANzYPxzvXAwGAgjdvOPE&scope=profile+postal_code&state=beac8433dcc5f3f5fffa148fc07db255296ed0902ff015f7" for 127.0.0.1 at 2015-03-13 08:00:37 -0300
-Processing by SessionsController#create as HTML
-  Parameters: {"code"=>"ANzYPxzvXAwGAgjdvOPE", "scope"=>"profile postal_code", "state"=>"beac8433dcc5f3f5fffa148fc07db255296ed0902ff015f7", "provider"=>"amazon"}
-  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AEQ6NQMSND4NODOLT3K5C2QM7C4Q' LIMIT 1[0m
-Redirected to http://localhost:3000/vendors/home
-Completed 302 Found in 54.2ms (ActiveRecord: 0.5ms)
-
-
-Started GET "/vendors/home" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Processing by VendorsController#home as HTML
-  [1m[35mVendor Load (8.5ms)[0m  SELECT "vendors".* FROM "vendors" WHERE "vendors"."id" = ? LIMIT 1  [["id", 1]]
-  Rendered vendors/home.html.erb within layouts/application (1.7ms)
-Completed 200 OK in 21.5ms (Views: 12.0ms | ActiveRecord: 8.5ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Served asset /layout.css - 304 Not Modified (1ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (6ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:38 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/logout" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Processing by SessionsController#destroy as HTML
-Redirected to http://localhost:3000/
-Completed 302 Found in 0.7ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.5ms)
-Completed 200 OK in 7.5ms (Views: 7.2ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:40 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/auth/amazon" for 127.0.0.1 at 2015-03-13 08:00:41 -0300
-
-
-Started GET "/auth/amazon/callback?code=ANPNVkZBzQfcDuwStNJC&scope=profile+postal_code&state=67785bc325c60499588df351e7078aab40d94ea606414ac7" for 127.0.0.1 at 2015-03-13 08:00:49 -0300
-Processing by SessionsController#create as HTML
-  Parameters: {"code"=>"ANPNVkZBzQfcDuwStNJC", "scope"=>"profile postal_code", "state"=>"67785bc325c60499588df351e7078aab40d94ea606414ac7", "provider"=>"amazon"}
-  [1m[36mVendor Load (0.2ms)[0m  [1mSELECT "vendors".* FROM "vendors" WHERE "vendors"."provider" = 'amazon' AND "vendors"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1[0m
-  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'amazon' AND "users"."uid" = 'amzn1.account.AERDYRWMZEB6JGZEGOSMHTOPYR4A' LIMIT 1
-Redirected to http://localhost:3000/sessions/new
-Completed 302 Found in 3.5ms (ActiveRecord: 0.4ms)
-
-
-Started GET "/sessions/new" for 127.0.0.1 at 2015-03-13 08:00:50 -0300
-Processing by SessionsController#new as HTML
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
-Redirected to http://localhost:3000/sessions/offer
-Completed 302 Found in 2.4ms (ActiveRecord: 0.2ms)
-
-
-Started GET "/sessions/offer" for 127.0.0.1 at 2015-03-13 08:00:50 -0300
-Processing by SessionsController#offer as HTML
-  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
-  Rendered sessions/offer.html.erb within layouts/application (1.3ms)
-Completed 200 OK in 7.6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:52 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:52 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:52 -0300
-Served asset /jquery.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:52 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:52 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/logout" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Processing by SessionsController#destroy as HTML
-Redirected to http://localhost:3000/
-Completed 302 Found in 0.5ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Processing by SessionsController#new as HTML
-  Rendered sessions/new.html.erb within layouts/application (0.4ms)
-Completed 200 OK in 6.0ms (Views: 5.7ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/assets/layout.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Served asset /layout.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Served asset /jquery.js - 304 Not Modified (4ms)
-
-
-Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Served asset /sessions.css - 304 Not Modified (0ms)
-
-
-Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Served asset /sessions.js - 304 Not Modified (0ms)
-
-
-Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-03-13 08:00:54 -0300
-Served asset /jquery_ujs.js - 304 Not Modified (0ms)

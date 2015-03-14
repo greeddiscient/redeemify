@@ -10,3 +10,10 @@ Scenario: successful login after entering valid credentials
 	And I have already registered with "Facebook"
     Then I am signed in with "Facebook"
 	Then I can see "Offer page"
+
+Scenario: unsuccessful login after entering invalid credentials, redirected back to home page
+
+	Given I am on the user login page
+	And I entered invalid credentials with "Facebook"
+	Then I can see "Authentication failed, please try again."
+

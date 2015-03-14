@@ -18,12 +18,7 @@ describe SessionsController do
     end
   end
 
-  describe "#enter" do
-     it "renders the about template" do
-        get 'enter' # or :new
-        expect(response).to render_template :enter
-    end
-  end
+
 
   describe "#show" do
     before do
@@ -32,11 +27,13 @@ describe SessionsController do
     end
 
     it "renders the about template" do
+        get 'failure'
         get 'new' # or :new
         expect(response).to render_template :new
     end
 
      it "renders the about template" do
+        get 'offer'
         get :show # or :new
         expect(response).to render_template :show
     end
@@ -57,6 +54,7 @@ describe SessionsController do
     it "should successfully create a session" do
       session[:user_id].should be_nil
       post :create, provider: :amazon
+      get 'offer'
       flash[:notice].should == "Signed in!"
       session[:user_id].should_not be_nil
 

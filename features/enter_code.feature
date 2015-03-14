@@ -1,5 +1,5 @@
 
-Feature: Enter Provider Code (Story 1)
+Feature: Enter Provider Code (Story 1b)
 
     As a user
     So that I can view my offers

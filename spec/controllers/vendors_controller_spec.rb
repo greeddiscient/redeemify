@@ -15,12 +15,6 @@ describe VendorsController do
       session[:vendor_id].should_not be_nil
       get 'home' # or :new
       expect(response).to render_template :home
- 
-
-
-
-        get 'home' # or :new
-        expect(response).to render_template :home
     end
   end
 
@@ -65,16 +59,7 @@ describe VendorsController do
       response.should redirect_to root_url
     end
  
-  #   it "should redirect to the new page" do
-  #     session[:vendor_id].should be_nil
 
-  #     v = Vendor.create :name => "thai" , :uid => "54321", :provider => "amazon"
-  #     v.save!
-
-  #     session[:vendor_id] = v.id
-  #     delete :destroy
-  #     response.should redirect_to root_url
-  #   end
   end
 
 end
