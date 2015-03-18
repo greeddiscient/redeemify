@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
   def offer
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
-      if current_user.code? || current_user.code == ""
+      if current_user.code.nil? || current_user.code == ""
         @current_code = params[:code]
         current_user.code = @current_code
         current_user.save!
