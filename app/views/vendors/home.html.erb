@@ -1,3 +1,37 @@
-<h1>Welcome home, vendor</h1>
-<strong><%= @vendor.name %></strong>
-<p><%= link_to "Log out", logout_path, id: "logout-link" %></p>
+<p>Account from: <%= @vendor.provider.upcase  %> | <%= @vendor.name %> | <%= link_to "Log out", logout_path %></p>
+<div id="welcome">
+
+    <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
+  </div>
+<div class = "vendor">
+    <h1>VENDOR</h1>
+  </div>
+
+<div class = "row1">
+    <a  class = "vendor_ability">
+    	 <%= link_to image_tag("r1_c1.jpg", size: "170x40"), "http://" %>
+
+    </a>
+    <a  class = "vendor_ability">
+    	<%= link_to image_tag("r1_c2.jpg", size: "170x40"), "http://" %>
+     
+    </a>
+    <a  class = "vendor_ability">
+    	<%= link_to image_tag("r1_c3.jpg", size: "170x40"), "http://" %>
+ 
+    </a>
+
+
+  </div>
+
+  <div class = "row2">
+    <a  class = "vendor_ability">
+    	 <%= link_to image_tag("r2_c1.jpg", size: "170x40"), "http://" %>
+    </a>
+    <a  class = "vendor_ability">
+    	<%= link_to image_tag("r2_c2.jpg", size: "170x40"), "http://" %>
+     
+    </a>
+    
+
+  </div>

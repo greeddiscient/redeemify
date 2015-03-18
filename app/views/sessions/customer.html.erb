@@ -1,0 +1,60 @@
+<p>Account from: <%= current_user.provider.upcase  %> | <%= current_user.name %> | <%= link_to "Log out", logout_path %></p>
+<div id="welcome">
+
+    <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
+  </div>
+<div class = "customer">
+    <h1>CUSTOMER</h1>
+  </div>
+
+ <% if current_user != nil %>
+  <% if current_user.code != "" %>
+    <p>Customer register code:</p> 
+    <p><%=@current_code%></p>
+    <p><%= current_user.code%></p>
+  <% end %>
+<% end %> 
+
+<p class = "customer_notice"> Click on vendor to redeem your code! </p>
+<div class="customer_table">
+  <table class="listing" summary="Vendor list">
+    <tr class="header">
+     
+      <th class = "vendor">VENDOR</th>
+      <th class = "description">DESCRIPTION</th>
+      <th class = "code">CODE</th>
+      
+    </tr>
+    <tr class = "list">
+    	<td class = "vendor"><%= link_to("GITHUB","http://github.com") %></td>
+    	<td class = "description" >GitHub's description</td>
+    	<td class = "code">234234DFSDF32</td>
+    </tr>
+   <tr class = "list">
+    	<td class = "vendor"><%= link_to("AMAZON","http://amazon.com") %></td>
+    	<td class = "description" >Amazon's description</td>
+    	<td class = "code">234234DFSDF32</td>
+    </tr>
+    <tr class = "list">
+    	<td class = "vendor"><%= link_to("FACEBOOK","http://facebook.com") %></td>
+    	<td class = "description" >Facebook's description</td>
+    	<td class = "code">234234DFSDF32</td>
+    </tr>
+   
+  </table>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

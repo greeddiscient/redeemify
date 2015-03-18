@@ -4,6 +4,7 @@ class CreateVendors < ActiveRecord::Migration
       t.string :name
       t.string :uid
       t.string :provider
+      t.string :description
 
       t.timestamps
     end

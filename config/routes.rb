@@ -1,6 +1,6 @@
 Auth::Application.routes.draw do
   root to: "sessions#new"
-  get 'sessions/offer'
+  get 'sessions/customer'
   get 'sessions/index'
   get 'sessions/show'
   get 'sessions/enter'

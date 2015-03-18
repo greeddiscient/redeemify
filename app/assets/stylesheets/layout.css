@@ -3,7 +3,7 @@ body {
   
   background-color: #ffffff;
   font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  font-size: 12px;
 
 }
 img.normal {
@@ -39,23 +39,34 @@ a {
     font-style: normal;
 }
 #flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-  margin-right: 150px;
+ /* padding: 5px 8px;*/
+  /*margin: 10px 0;
+  margin-right: 150px;*/
 }
 
-#welcome { height: 10em ; width : 100%; 
+.formcode {text-align: center; padding-top: 5px}
+
+#welcome {height: 10em ; width : 100%; padding-top: 5px;
   background: #333742; color: #FFFFFF}
 
 
 
-#welcome h1 {font-family: 'Circula'; font-size: 72px ;letter-spacing: 10px; text-align: center}
+#welcome h1 {font-family: 'Circula'; font-size: 72px ;letter-spacing: 10px; text-align: center; margin: 0px auto;}
+p {font-size: 12px; text-align: right; color: #000000}
 
 /*#welcome h1 #logo{padding: 10px;}*/
+.customer { height: 40px; text-align: center; width : 300px; margin-top: 5em; margin-left: auto; margin-right: auto;
+  background: #05e177; color: #FFFFFF; background-position: center; margin-top: 10px}
+.customer h1 { margin: 0; padding-top: 3px; font-family: 'Circula'; font-size: 30px ; letter-spacing: 2px}
 
-.loginwith { height: 40px; padding-top: 0em; text-align: center; width : 540px; margin-top: 5em; margin-left: auto; margin-right: auto;
+.vendor { height: 40px; text-align: center; width : 300px; margin-top: 5em; margin-left: auto; margin-right: auto;
+  background: #44c4ff; color: #FFFFFF; background-position: center; margin-top: 10px}
+.vendor h1 { margin: 0; padding-top: 3px; font-family: 'Circula'; font-size: 30px ; letter-spacing: 2px}
+
+.loginwith { height: 40px; text-align: center; width : 540px; margin-top: 5em; margin-left: auto; margin-right: auto;
   background: #f65a5b; color: #FFFFFF; background-position: center}
 .loginwith h1 { margin: 0; padding-top: 3px; font-family: 'Circula'; font-size: 30px ; letter-spacing: 2px}
+
 
 /*#twitter-auth {margin-left: auto; margin-right: auto; margin-bottom: 10px}
 #google-auth { padding-right : 2px;}
@@ -68,7 +79,39 @@ a {
 
 #amazon-auth {padding-left : 2px;}
 */
+.customer_notice {color:red; text-align: left; font-style: italic;}
+table {width: 100%}
+.customer_table table, td, th {border-collapse: collapse; border: 2px solid black}
+.header {height: 40px; font-family: 'Circula'; font-size: 20px}
 
+.row1 a {padding-left: 5px;
+  padding-right: 5px; }
+
+.row1 {
+  
+  width: 600px;
+  padding-top: 5em;
+  margin: auto;
+}
+
+.row2 a {padding-left: 5px;
+  padding-right: 5px; }
+
+.row2 {
+  
+  width: 400px;
+  padding-top: 2em;
+  margin: auto;
+}
+
+
+table td.vendor {text-align: center}
+table tr.list {height : 100px;}
+table tr.header th.vendor{ width: 200px}
+table tr.header th.description { width: auto}
+table tr.header th.code { width: 200px}
+table tr.list td.description{  text-align: top;word-wrap: auto;}
+table tr.list td.code{  text-align: top;word-wrap: auto;text-align: center}
 .auth_providers {
   height: 150px;
   width: 540px;
@@ -93,7 +136,7 @@ a {
   border: 2px solid #CF0000;
   padding: 0px;
   padding-bottom: 12px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   background-color: #f0f0f0;
   font-size: 12px;
 }

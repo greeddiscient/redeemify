@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       if current_user.code == ""
         @user = User.new
       else
-        redirect_to '/sessions/offer', notice: "Already register call from sessions#new"
+        redirect_to '/sessions/customer', notice: "Already register call from sessions#new"
       end
     end
   end
@@ -30,13 +30,13 @@ class SessionsController < ApplicationController
         redirect_to '/sessions/new', notice: "Signed in!"
       else
         session[:user_id]= user.id
-        redirect_to '/sessions/offer', notice: "Offer page"
+        redirect_to '/sessions/customer', notice: "Offer page"
       end
     end
   end
 
 
-  def offer
+  def customer
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
       if current_user.code.nil? || current_user.code == ""
