@@ -64,7 +64,7 @@ class SessionsController < ApplicationController
           else
             @list_codes[vendor.name] = "We are reloading with sleight of hand"
           end 
-          debugger
+          # debugger
         end
 
       else

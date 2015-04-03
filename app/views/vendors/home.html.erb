@@ -9,14 +9,14 @@
 
 
   <p><%= link_to "Upload New Codes", '/vendors/upload_page' %></p>
-
+  <p><%= link_to "View All Codes", '/vendors/viewCodes' %></p>
 <!-- <h3>Import a CSV File</h3>
   <%= form_tag import_vendors_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Import CSV" %>
   <% end %>
  -->
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Codes</th>
@@ -31,11 +31,36 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 
 <p>Number of codes used: <%= @codesUsed %></p>
 <p>Number of codes remaining: <%= @codesRemain %></p>
+<p>History: <%= @history %></p>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Upload Date</th>
+      <th>Code Description</th>
+      <th>Expiration Date</th>
+      <th>Number of Codes Uploaded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories_array.each do |history| %>
+      <tr>
+        <td><%= history[0] %></td>
+        <td><%= history[1] %></td>
+        <td><%= history[2] %></td>
+        <td><%= history[3] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 
 

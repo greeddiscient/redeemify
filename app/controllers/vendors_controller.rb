@@ -7,12 +7,22 @@ class VendorsController < ApplicationController
   def import
     current_vendor=Vendor.find(session[:vendor_id])
     @info = {}
-    # @info["description"] = params[:codeDescription] 
+    @info["description"] = params[:codeDescription] 
     @info["instruction"] = params[:instruction]
     @info["help"] = params[:helpLink]
     @info["expiration"] = params[:expiration]
+
+    # current_vendor.update_attribute(:history ="")
+    # history = current_vendor.history
+    # temp = 
+    # history.push(",,,")
     # debugger
     Vendor.import(params[:file], current_vendor,@info)
+    
+    # history = current_vendor.history
+    # temp = 
+    # history.push(",,,")
+
     redirect_to '/vendors/home', notice: "Codes imported"
   end
 
@@ -47,14 +57,29 @@ class VendorsController < ApplicationController
     @codesRemain = @vendorcodes.where(:user_id => nil).count
     @codesUsed = @vendorcodes.count - @codesRemain
 
+    @histories = @vendor.history
+    @histories = @histories.split("|||||")
+
+
+    # @history1 = histories[0].split("+++++")
+
+    @histories_array=[]
+    @histories.each do |history|
+      temp = history.split("+++++")
+      @histories_array.push(temp)
+    end
+
   end
 
 
   def upload_page
     @vendor = Vendor.find(session[:vendor_id])
     @vendorcodes= @vendor.vendorCodes.all
+  end
 
-    
+  def viewCodes
+    @vendor = Vendor.find(session[:vendor_id])
+    @vendorcodes = @vendor.vendorCodes
 
   end
 

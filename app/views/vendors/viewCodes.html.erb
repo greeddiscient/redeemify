@@ -1,0 +1,18 @@
+<p><%= link_to "Back to HomePage", '/vendors/home' %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codes</th>
+      <th>Vendor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendorcodes.each do |vendorcode| %>
+      <tr>
+        <td><%= vendorcode.code %></td>
+        <td><%= vendorcode.vendor.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
