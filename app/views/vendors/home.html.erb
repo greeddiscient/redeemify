@@ -7,6 +7,39 @@
     <h1>VENDOR</h1>
   </div>
 
+
+  <p><%= link_to "Upload New Codes", '/vendors/upload_page' %></p>
+
+<!-- <h3>Import a CSV File</h3>
+  <%= form_tag import_vendors_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+ -->
+<table>
+  <thead>
+    <tr>
+      <th>Codes</th>
+      <th>Vendor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendorcodes.each do |vendorcode| %>
+      <tr>
+        <td><%= vendorcode.code %></td>
+        <td><%= vendorcode.vendor.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<p>Number of codes used: <%= @codesUsed %></p>
+<p>Number of codes remaining: <%= @codesRemain %></p>
+
+
+
+
 <div class = "row1">
     <a  class = "vendor_ability">
     	 <%= link_to image_tag("r1_c1.jpg", size: "170x40"), "http://" %>

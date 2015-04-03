@@ -33,7 +33,7 @@ describe SessionsController do
     end
 
      it "renders the about template" do
-        get 'offer'
+        get 'customer'
         get :show # or :new
         expect(response).to render_template :show
     end
@@ -54,7 +54,7 @@ describe SessionsController do
     it "should successfully create a session" do
       session[:user_id].should be_nil
       post :create, provider: :amazon
-      get 'offer'
+      get 'customer'
       flash[:notice].should == "Signed in!"
       session[:user_id].should_not be_nil
 
@@ -74,15 +74,15 @@ describe SessionsController do
     end
   end
 
-  describe "#Offer" do
-    it "should redirect the user to the offer page" do
+  describe "#customer" do
+    it "should redirect the user to the customer page" do
       # post :create, provider: :github
       # session[:user_id].should_not be_nil
       # # v = User.create :name => "thai" , :code => "123", :uid => "54321", :provider => "amazon"
       # # v.save!
       # # post :create, provider:
-      get :offer
-      expect(response).to render_template :offer
+      get :customer
+      expect(response).to render_template :customer
     end
   end
   

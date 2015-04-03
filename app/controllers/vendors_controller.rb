@@ -4,7 +4,11 @@ class VendorsController < ApplicationController
     # @vendor = Vendor.find(session[:vendor_id])
   end
 # --------------------------
-
+  def import
+    current_vendor=Vendor.find(session[:vendor_id])
+    Vendor.import(params[:file], current_vendor)
+    redirect_to '/vendors/home', notice: "Codes imported"
+  end
 
 
 
@@ -32,7 +36,21 @@ class VendorsController < ApplicationController
 # ---------------
   def home
     @vendor = Vendor.find(session[:vendor_id])
+    @vendorcodes= @vendor.vendorCodes
+
+    @codesRemain = @vendorcodes.where(:user_id => nil).count
+    @codesUsed = @vendorcodes.count - @codesRemain
+
   end
+
+
+  def upload_page
+    @vendor = Vendor.find(session[:vendor_id])
+    @vendorcodes= @vendor.vendorCodes.all
+    
+
+  end
+
 
   def show
   end

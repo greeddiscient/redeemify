@@ -17,12 +17,52 @@
 
 <p class = "customer_notice"> Click on vendor to redeem your code! </p>
 <div class="customer_table">
-  <table class="listing" summary="Vendor list">
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Vendor</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @list_codes.each do |vendor, code| %>
+      <tr>
+        <td><%= vendor %></td>
+        <td><%= code %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <table class="listing" summary="Vendor list">
     <tr class="header">
      
       <th class = "vendor">VENDOR</th>
-      <th class = "description">DESCRIPTION</th>
+       <th class = "description">DESCRIPTION</th> 
       <th class = "code">CODE</th>
+
+      <% @list_codes.each do |vendor, code| %>
+      <tr>
+        <td><%= vendor %></td>
+        <td><%= code %></td>
+      </tr>
+    <% end %>
       
     </tr>
     <tr class = "list">
@@ -41,7 +81,7 @@
     	<td class = "code">234234DFSDF32</td>
     </tr>
    
-  </table>
+  </table> -->
 
 </div>
 

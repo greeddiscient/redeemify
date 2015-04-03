@@ -4,6 +4,12 @@ gem 'rails', '3.2.18'
 gem 'rake'
 gem 'rails_12factor'
 gem 'ffi', '1.9.6'
+# gem 'debugger'
+gem 'byebug'
+
+# gem 'bootstrap-sass', '~> 3.2.0'
+# gem 'momentjs-rails', '>= 2.9.0'
+# gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

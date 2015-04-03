@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the code entry page$/ then '/sessions/enter'
-    when /^the offer page$/ then '/sessions/offer'
+    when /^the offer page$/ then '/sessions/customer'
     when /^the vendor page$/ then '/vendors/home'
     when /^the user login page$/ then root_url
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'

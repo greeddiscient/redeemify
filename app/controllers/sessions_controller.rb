@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     # user = User.from_omniauth(env["omniauth.auth"])
     auth = request.env["omniauth.auth"]
     
-    vendor = Vendor.find_by_provider_and_uid(auth["provider"], auth["uid"])
+    vendor = Vendor.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
 
     if vendor != nil
       session[:vendor_id]= vendor.id
@@ -42,12 +42,25 @@ class SessionsController < ApplicationController
       if current_user.code.nil? || current_user.code == ""
         @current_code = params[:code]
         current_user.code = @current_code
-        current_user.save!
+        current_user.save!   
       else
         @current_code = current_user.code
       end
-    end
 
+      @list_codes = {}
+      @vendors = Vendor.all
+      @vendors.each do |vendor|
+        code = vendor.vendorCodes.where(:user_id=>nil).first
+        # debugger
+        if code != nil
+          code.update_attribute(:user_id, current_user.id)
+          # debugger
+          @list_codes[vendor.name] = code.code
+        else
+          @list_codes[vendor.name] = "We are reloading with sleight of hand"
+        end 
+      end
+    end
   end
 
 

@@ -6,6 +6,7 @@ Auth::Application.routes.draw do
   get 'sessions/enter'
   get 'vendors/home'
   get 'vendors/edit'
+  get 'vendors/upload_page'
 
   get 'vendors/new'
   match "/auth/:provider/callback", to: "sessions#create"
@@ -13,5 +14,13 @@ Auth::Application.routes.draw do
   match "/logout", to: "sessions#destroy", :as => "logout"
   match "/logout", to: "vendors#destroy", :as => "logout2"
   resources :sessions
-  resources :vendors
+  resources :users do
+    resources :vendorcodes
+  end
+  
+  resources :vendors do
+    collection {post :import}
+    resources :vendorcodes
+  end
+
 end

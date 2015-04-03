@@ -1,0 +1,54 @@
+
+<h1><%= @vendor.name %></h1>
+
+<h3>Attach CSV file</h3>
+  <%= form_tag import_vendors_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <!-- <h3>File Name: </h3> 
+    <%= text_field_tag :filename %> -->
+    <!-- <h3>Description: </h3> 
+    <%= text_field_tag :description %> -->
+    <h3>Code Description: </h3> 
+    <h3><textarea name="codeDescription" cols="50" rows="5">
+    Code Description
+    </textarea></h3>
+
+    <h3>Instruction to redeem the code: </h3> 
+    <h3><textarea name="instruction" cols="50" rows="5">
+    Instruction to redeem the code
+    </textarea></h3>
+
+    <h3>Help link: </h3> 
+    <h3><textarea name="helpLink" cols="50" rows="5">
+    Help link
+    </textarea></h3>
+
+
+    <%= submit_tag "Submit" %>
+  <% end %>
+
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+    </div>
+</div>
+
+
+
+
