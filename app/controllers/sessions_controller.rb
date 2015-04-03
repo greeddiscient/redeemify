@@ -40,25 +40,49 @@ class SessionsController < ApplicationController
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
       if current_user.code.nil? || current_user.code == ""
+        #1st time
         @current_code = params[:code]
         current_user.code = @current_code
-        current_user.save!   
-      else
-        @current_code = current_user.code
-      end
+        current_user.save!  
 
-      @list_codes = {}
-      @vendors = Vendor.all
-      @vendors.each do |vendor|
-        code = vendor.vendorCodes.where(:user_id=>nil).first
-        # debugger
-        if code != nil
-          code.update_attribute(:user_id, current_user.id)
+        @list_codes = {}
+        @instruction = {}
+        @help = {}
+        @expiration = {}
+        @vendors = Vendor.all
+
+        @vendors.each do |vendor|
+          code = vendor.vendorCodes.where(:user_id=>nil).first
           # debugger
-          @list_codes[vendor.name] = code.code
-        else
-          @list_codes[vendor.name] = "We are reloading with sleight of hand"
-        end 
+          if code != nil
+            code.update_attribute(:user_id, current_user.id)
+            # debugger
+            @list_codes[vendor.name] = code.code
+            @instruction[vendor.name] = code.instruction
+            @help[vendor.name] = code.help
+            @expiration[vendor.name] = code.expiration
+          else
+            @list_codes[vendor.name] = "We are reloading with sleight of hand"
+          end 
+          debugger
+        end
+
+      else
+        #2nd time
+        @current_code = current_user.code
+        @list_codes = {}
+        @instruction = {}
+        @help = {}
+        @expiration = {}
+        @vendors = VendorCode.where(:user_id => current_user.id)
+
+        @vendors.each do |vendor|
+          
+          @list_codes[Vendor.find(vendor.vendor).name] = vendor.code
+          @instruction[Vendor.find(vendor.vendor).name] = vendor.instruction
+          @help[Vendor.find(vendor.vendor).name] = vendor.help
+          @expiration[Vendor.find(vendor.vendor).name] = vendor.expiration
+        end
       end
     end
   end

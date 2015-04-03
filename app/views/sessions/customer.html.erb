@@ -24,6 +24,10 @@
     <tr>
       <th>Vendor</th>
       <th>Code</th>
+      <th>Instruction</th>
+      <th>Expiration Date</th>
+      <th>Help</th>
+
     </tr>
   </thead>
   <tbody>
@@ -31,6 +35,9 @@
       <tr>
         <td><%= vendor %></td>
         <td><%= code %></td>
+        <td><%= @instruction[vendor] %></td>
+        <td><%= @expiration[vendor] %></td>
+        <td><%= @help[vendor] %></td>
       </tr>
     <% end %>
   </tbody>

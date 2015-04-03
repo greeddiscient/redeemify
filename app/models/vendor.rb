@@ -12,12 +12,12 @@ class Vendor < ActiveRecord::Base
     	end
   	end
 
-  	def self.import(file, current_vendor)
+  	def self.import(file, current_vendor, info)
     	CSV.foreach(file.path, headers: true) do |row|
 
 	      	code = row.to_hash # exclude the price field
-	      	debugger
-	      	current_vendor.vendorCodes.create!(:code => code["code"], :vendor => current_vendor)
+	      	# debugger
+	      	current_vendor.vendorCodes.create!(:code => code["code"], :vendor => current_vendor, :instruction => info["instruction"], :help => info["help"], :expiration => info["expiration"])
 
 	      	#if product.count == 1
 		        #product.first.update_attributes(product_hash)

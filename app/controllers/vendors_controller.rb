@@ -6,7 +6,13 @@ class VendorsController < ApplicationController
 # --------------------------
   def import
     current_vendor=Vendor.find(session[:vendor_id])
-    Vendor.import(params[:file], current_vendor)
+    @info = {}
+    # @info["description"] = params[:codeDescription] 
+    @info["instruction"] = params[:instruction]
+    @info["help"] = params[:helpLink]
+    @info["expiration"] = params[:expiration]
+    # debugger
+    Vendor.import(params[:file], current_vendor,@info)
     redirect_to '/vendors/home', notice: "Codes imported"
   end
 
@@ -47,6 +53,7 @@ class VendorsController < ApplicationController
   def upload_page
     @vendor = Vendor.find(session[:vendor_id])
     @vendorcodes= @vendor.vendorCodes.all
+
     
 
   end
