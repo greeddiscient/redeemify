@@ -74,13 +74,13 @@ describe SessionsController do
 
   describe "#customer" do
     it "should redirect the user to the customer page" do
-      v = Vendor.create :name => "thai" , :uid => "54321", :provider => "amazon"
+      v = Vendor.create! :name => "thai" , :uid => "54321", :provider => "amazon"
       v.history = "+++++April 3rd, 2015 23:51+++++Code Description+++++05/02/2015+++++2|||||"
       v.save!
 
 
       a = v.vendorCodes.create!(:code => "123", :vendor => v, :instruction => "instruction", :help => "help link", :expiration => "05/02/2015")
-
+      a.save!
       get :customer
       expect(response).to render_template :customer
     end

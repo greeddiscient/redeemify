@@ -37,6 +37,7 @@ class SessionsController < ApplicationController
 
 
   def customer
+   
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
       if current_user.code.nil? || current_user.code == ""

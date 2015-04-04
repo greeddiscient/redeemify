@@ -10,28 +10,7 @@
 
   <p><%= link_to "Upload New Codes", '/vendors/upload_page' %></p>
   <p><%= link_to "View All Codes", '/vendors/viewCodes' %></p>
-<!-- <h3>Import a CSV File</h3>
-  <%= form_tag import_vendors_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %>
- -->
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Codes</th>
-      <th>Vendor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @vendorcodes.each do |vendorcode| %>
-      <tr>
-        <td><%= vendorcode.code %></td>
-        <td><%= vendorcode.vendor.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
+
 
 
 <p>Number of codes used: <%= @codesUsed %></p>
