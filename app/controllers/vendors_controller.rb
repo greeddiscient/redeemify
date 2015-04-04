@@ -57,18 +57,21 @@ class VendorsController < ApplicationController
     @codesRemain = @vendorcodes.where(:user_id => nil).count
     @codesUsed = @vendorcodes.count - @codesRemain
 
+
     @histories = @vendor.history
-    @histories = @histories.split("|||||")
+    if @histories != nil
+      @histories = @histories.split("|||||")
 
 
-    # @history1 = histories[0].split("+++++")
+      # @history1 = histories[0].split("+++++")
 
-    @histories_array=[]
-    @histories.each do |history|
-      temp = history.split("+++++")
-      @histories_array.push(temp)
+      @histories_array=[]
+      @histories.each do |history|
+        temp = history.split("+++++")
+        @histories_array.push(temp)
+      end
     end
-
+    @histories_array=[]
   end
 
 

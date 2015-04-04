@@ -9,12 +9,23 @@ describe VendorsController do
       session[:vendor_id].should be_nil
 
       v = Vendor.create :name => "thai" , :uid => "54321", :provider => "amazon"
+      v.history = "+++++April 3rd, 2015 23:51+++++Code Description+++++05/02/2015+++++2|||||"
       v.save!
 
       session[:vendor_id] = v.id
       session[:vendor_id].should_not be_nil
       get 'home' # or :new
       expect(response).to render_template :home
+
+      get 'upload_page'
+      expect(response).to render_template :upload_page
+
+      get 'viewCodes'
+      expect(response).to render_template :viewCodes
+
+      
+
+
     end
   end
 

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150403070453) do
+ActiveRecord::Schema.define(:version => 20150403234638) do
 
   create_table "users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "code"
   end
 
@@ -34,7 +34,15 @@ ActiveRecord::Schema.define(:version => 20150403070453) do
     t.string   "help"
   end
 
-# Could not dump table "vendors" because of following StandardError
-#   Unknown type 'thearray' for column 'history'
+  create_table "vendors", :force => true do |t|
+    t.string   "name"
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "email"
+    t.string   "history"
+  end
 
 end
