@@ -15,6 +15,21 @@ Then /^show me the page$/ do
   save_and_open_page
 end
 
+Given /the following vendor codes exist/ do |vendor_codes_table|
+  vendor_codes_table.hashes.each do |code|
+    v = Vendor.find_by_name(code['vendor'])
+    v.vendorCodes.create!(:code => code["code"], :vendor => v)
+
+
+  end
+end
+
+Given /the following vendors exist/ do |vendors_table|
+  vendors_table.hashes.each do |vendor|
+    Vendor.create(vendor)
+  end
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
 end
@@ -30,7 +45,7 @@ end
 
 Given /^I am signed in as a vendor "([^"]*)" and user ID "([^"]*)" with "([^"]*)"$/ do |name, uid, provider|
   disable_test_omniauth()
-  set_omniauth_vendor(:name => name, :uid => uid, :provider => provider)
+  set_omniauth_vendor(:name => name, :uid => uid, :provider => provider, :email=> 'test@gmail.com')
   click_link("#{provider.downcase}-auth")
 end
 
@@ -40,6 +55,7 @@ Given /^a vendor "(.*?)" and user ID "(.*?)" registered with "(.*?)"$/ do |name,
   vendor.name = name
   vendor.uid = uid
   vendor.provider = provider
+  vendor.email = 'test@gmail.com'
   vendor.save
 end
 
@@ -50,6 +66,7 @@ And /^I have already registered with "([^"]*)"$/ do |provider|
   click_button("Submit")
   click_link("logout-link")
 end
+
 
 And /^I entered invalid credentials with "([^"]*)"$/ do |provider|
   set_invalid_omniauth()
@@ -67,8 +84,8 @@ end
 When /^(?:|I )press "([^"]*)" link$/ do |link|
   if link.eql? "Log out"
     click_link("logout-link")
-  else
-    visit '/auth/:link'
+  elsif link.eql? "upload"
+    click_link("upload")
   end
 end
 
@@ -84,4 +101,8 @@ end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
+end
+
+And /^I attach a file with vendor codes inside$/ do
+  attach_file('file', File.join(Rails.root, 'features', 'upload-file', 'test.csv'))
 end
