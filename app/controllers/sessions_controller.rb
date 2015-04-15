@@ -20,6 +20,10 @@ class SessionsController < ApplicationController
     vendor = Vendor.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
 
     if vendor != nil
+      userVendor=User.find_by_provider_and_email(vendor.provider, vendor.email)
+      if userVendor == nil
+        User.create(:provider=>vendor.provider, :email => vendor.email, :code => "")
+      end
       session[:vendor_id]= vendor.id
       redirect_to '/vendors/home', notice: "home page, vendor"
     else
@@ -37,7 +41,6 @@ class SessionsController < ApplicationController
 
 
   def customer
-   
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
       if current_user.code.nil? || current_user.code == ""

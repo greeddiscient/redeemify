@@ -12,6 +12,7 @@ Auth::Application.routes.draw do
   get 'vendors/viewCodes'
   get 'vendors/profile'
   get 'vendors/remove_codes'
+  get 'vendors/change_to_user'
 
   get 'vendors/new'
   match "/auth/:provider/callback", to: "sessions#create"

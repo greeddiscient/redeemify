@@ -83,6 +83,17 @@ class VendorsController < ApplicationController
     redirect_to '/vendors/home', notice: "Unclaimed Codes Successfully Removed"
   end
 
+  def change_to_user
+    current_vendor=Vendor.find(session[:vendor_id])
+    current_user=User.find_by_provider_and_email(current_vendor.provider, current_vendor.email)
+    session[:user_id]=current_user.id
+    if current_user.code == nil || current_user.code==""
+      redirect_to '/sessions/new', notice: "Changed to user account"
+    else
+      redirect_to '/sessions/customer', notice: "Changed to user account"
+    end
+  end
+
 
 
   def show
