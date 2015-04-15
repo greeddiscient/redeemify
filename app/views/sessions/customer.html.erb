@@ -8,6 +8,12 @@
 <p class="middle">Total Offer Value: <%= @total %></p>
 <p class = "customer_notice"> Click on vendor's name to redeem your code! </p>
 
+<% if @vendor_user %>
+  <div class = "row1">
+    <%= link_to "Login as a vendor", '/sessions/change_to_vendor', :id => "upload" %>
+  </div>
+<% end %>
+
  <% @list_codes.each do |vendor, code| %>
  <div class="customer_table">
 <table>

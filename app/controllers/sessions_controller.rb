@@ -101,6 +101,7 @@ class SessionsController < ApplicationController
         end
       end
     end
+    @vendor_user = Vendor.find_by_provider_and_email(current_user.provider, current_user.email)
   end
 
 
@@ -113,6 +114,9 @@ class SessionsController < ApplicationController
     redirect_to root_url, alert: "Authentication failed, please try again."
   end
 
+  def change_to_vendor
+    redirect_to '/vendors/home', notice: "Change to Vendor Account"
+  end
 
   def hello_user
   end
