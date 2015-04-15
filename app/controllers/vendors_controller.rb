@@ -74,8 +74,13 @@ class VendorsController < ApplicationController
     @info["helpLink"] = params[:helpLink]
     @info["expiration"] = params[:expiration]
     Vendor.update_profile_vendor(current_vendor,@info)
-    debugger
     redirect_to '/vendors/home', notice: "Profile Updated"
+  end
+
+  def remove_codes
+    current_vendor=Vendor.find(session[:vendor_id])
+    Vendor.remove_unclaimed_codes(current_vendor)
+    redirect_to '/vendors/home', notice: "Unclaimed Codes Successfully Removed"
   end
 
 

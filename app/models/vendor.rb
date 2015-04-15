@@ -47,4 +47,11 @@ class Vendor < ActiveRecord::Base
   		current_vendor.update_attribute(:instruction, info["instruction"])
   	end # end self.profile()
 
+  	def self.remove_unclaimed_codes(current_vendor)
+  		unclaimedCodes=current_vendor.vendorCodes.where(:user_id => nil)
+  		unclaimedCodes.each do |code|
+  			code.destroy
+  		end
+  	end
+
 end
