@@ -16,22 +16,11 @@
 <h3 class="upload_text">Attach .csv file </h3>  <%= form_tag import_vendors_path, multipart: true do %>
 <p> (a one column CSV file with "code" as the header)</p>
     <%= file_field_tag :file %> 
-    <!-- <h3>File Name: </h3> 
-    <%= text_field_tag :filename %> -->
-    <!-- <h3>Description: </h3> 
-    <%= text_field_tag :description %> -->
-    <h3 class="upload_text">Code Description: </h3> 
-   <textarea name="description" id="description" cols="50" rows="4" placeholder="Code Description..."></textarea>
-
-    <h3 class="upload_text">Instruction to redeem the code</h3> 
-    <textarea name="instruction" id="instruction" cols="50" rows="4" placeholder ="Instruction to redeem the code..."></textarea>
-
-    <h3 class="upload_text">Expiration Day</h3> 
-    <!-- <textarea name="expiration" id="expiration" cols="8" rows="1" placeholder="mm/dd/yyyy"></textarea> -->
+    <h3 class="upload_text">Comment: </h3> 
+    <textarea name="comment" id="comment" cols="50" rows="4" placeholder="Comment..."></textarea>
+    
     <h3><input type="text" name="expiration" id="expiration" value= "mm/dd/yyyy"></h3>
 
-    <h3 class="upload_text">Help link</h3> 
-    <textarea name="helpLink" id = "helpLink" cols="50" rows="4" placeholder ="Help link..."></textarea>
     <br>
     <br>
 
@@ -52,7 +41,6 @@
   </script>
 </head>
 <body>
-    <!-- <h3><input type="text" name="expiration" id="expiration" value= "mm/dd/yyyy"></h3> -->
 
 
    
@@ -61,12 +49,7 @@
 </html>
 
 
-
-
-
-
-
-    <%= submit_tag "SUBMIT", :id => "submit"%>
+    <%= submit_tag "Update", :id => "submit"%>
   <% end %>
 </div>
 <!-- 

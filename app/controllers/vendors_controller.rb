@@ -7,10 +7,10 @@ class VendorsController < ApplicationController
   def import
     current_vendor=Vendor.find(session[:vendor_id])
     @info = {}
-    @info["description"] = params[:description] 
-    @info["instruction"] = params[:instruction]
-    @info["help"] = params[:helpLink]
-    @info["expiration"] = params[:expiration]
+    @info["comment"] = params[:comment] 
+    # @info["instruction"] = params[:instruction]
+    # @info["help"] = params[:helpLink]
+    # @info["expiration"] = params[:expiration]
 
     # current_vendor.update_attribute(:history ="")
     # history = current_vendor.history
@@ -18,11 +18,7 @@ class VendorsController < ApplicationController
     # history.push(",,,")
     # debugger
     Vendor.import(params[:file], current_vendor,@info)
-    
-    # history = current_vendor.history
-    # temp = 
-    # history.push(",,,")
-
+  
     redirect_to '/vendors/home', notice: "Codes imported"
   end
 
@@ -65,6 +61,15 @@ class VendorsController < ApplicationController
 
   end
 
+  def profile
+   @vendor = Vendor.find(session[:vendor_id])
+    @vendorcodes = @vendor.vendorCodes.all
+  end
+
+  def update_profile
+    @vendor = Vendor.find(session[:vendor_id])
+    params[:comment] 
+  end
 
   def show
   end

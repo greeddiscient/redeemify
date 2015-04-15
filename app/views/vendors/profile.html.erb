@@ -1,0 +1,58 @@
+<p class="account">Account from: <%= @vendor.provider.upcase  %> | <%= @vendor.name %> | <%= link_to "Log out", logout_path, :id => "logout-link" %></p>
+<div id="welcome">
+
+    <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
+</div>
+
+ <p class="backtohome"><%= link_to "Home", '/vendors/home' %></p>
+
+
+<h3 class="upload_text">Update your profile</h3>  <%= form_tag update_vendor_profile_path, multipart: true do %>
+    
+    <h3 class="upload_text">Cash Value</h3> 
+    <textarea name="cashValue" id="cashValue" cols="8" rows="1" placeholder="Enter the cash value"></textarea>
+
+    <h3 class="upload_text">Expiration Day</h3> 
+    <h3><input type="text" name="expiration" id="expiration" value= "mm/dd/yyyy"></h3>
+
+    <h3 class="upload_text">Help link</h3> 
+    <textarea name="helpLink" id = "helpLink" cols="50" rows="4" placeholder ="Help link..."></textarea>
+
+
+    <h3 class="upload_text">Instruction to redeem the code</h3> 
+    <textarea name="instruction" id="instruction" cols="50" rows="4" placeholder ="Instruction to redeem the code..."></textarea>
+
+    <br>
+    <br>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#expiration" ).datepicker();
+  });
+  </script>
+</head>
+<body>
+
+
+   
+
+</body>
+</html>
+
+
+    <%= submit_tag "SUBMIT", :id => "submit"%>
+  <% end %>
+</div>
+
+
+

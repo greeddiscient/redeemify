@@ -3,8 +3,7 @@ index do
     column :user_id                                                  
     column :code
     column :vendor
-    column :created_at
-    column :expiration                                     
+    column :created_at                                     
   end
   filter :vendor
   filter :user_id

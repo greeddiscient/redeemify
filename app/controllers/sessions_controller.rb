@@ -46,11 +46,13 @@ class SessionsController < ApplicationController
         current_user.code = @current_code
         current_user.save!  
 
+        @total = 0
         @list_codes = {}
         @instruction = {}
         @help = {}
         @expiration = {}
         @website = {}
+        @cashValue = {}
         @vendors = Vendor.all
 
         @vendors.each do |vendor|
@@ -60,10 +62,12 @@ class SessionsController < ApplicationController
             code.update_attribute(:user_id, current_user.id)
             # debugger
             @list_codes[vendor.name] = code.code
-            @instruction[vendor.name] = code.instruction
-            @help[vendor.name] = code.help
-            @expiration[vendor.name] = code.expiration
+            @instruction[vendor.name] = vendor.instruction
+            @help[vendor.name] = vendor.helpLink
+            @expiration[vendor.name] = vendor.expiration
             @website[vendor.name] = vendor.website
+            @cashValue[vendor.name] = vendor.cashValue
+            @total = @total + vendor.cashValue.gsub(/[^0-9\.]/,'').to_f
           else
             @list_codes[vendor.name] = "We are reloading with sleight of hand"
           end 
@@ -78,15 +82,19 @@ class SessionsController < ApplicationController
         @help = {}
         @expiration = {}
         @website = {}
-        @vendors = VendorCode.where(:user_id => current_user.id)
+        @cashValue = {}
+        @total = 0
+        @vendorCodes = VendorCode.where(:user_id => current_user.id)
 
-        @vendors.each do |vendor|
+        @vendorCodes.each do |vendorCode|
           
-          @list_codes[Vendor.find(vendor.vendor).name] = vendor.code
-          @instruction[Vendor.find(vendor.vendor).name] = vendor.instruction
-          @help[Vendor.find(vendor.vendor).name] = vendor.help
-          @expiration[Vendor.find(vendor.vendor).name] = vendor.expiration
-          @website[vendor.name] = vendor.vendor.website
+          @list_codes[Vendor.find(vendorCode.vendor).name] = vendorCode.code
+          @instruction[Vendor.find(vendorCode.vendor).name] = vendorCode.vendor.instruction
+          @help[Vendor.find(vendorCode.vendor).name] = vendorCode.vendor.helpLink
+          @expiration[Vendor.find(vendorCode.vendor).name] = vendorCode.vendor.expiration
+          @website[vendorCode.name] = vendorCode.vendor.website
+          @cashValue[vendorCode.name] = vendorCode.vendor.cashValue
+          @total = @total + vendorCode.vendor.cashValue.gsub(/[^0-9\.]/,'').to_f
         end
       end
     end

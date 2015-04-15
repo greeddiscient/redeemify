@@ -19,6 +19,10 @@
 <div class = "row1">
 	 <%= link_to "Upload New Codes", '/vendors/upload_page', :id => "upload" %>
 </div>
+<div class = "row1">
+   <%= link_to "Upload Your Profile", '/vendors/profile', :id => "upload" %>
+</div>
+
    
 <h4 class="history">History</h4>
   <div class = "vendor_table">
@@ -27,9 +31,9 @@
   <thead class = "header">
     <tr>
       <th >Upload Date</th>
-      <th >Code Description</th>
-      <th >Expiration Date</th>
+      <th >Comment</th>
       <th >Number of Codes Uploaded</th>
+      <!-- <th >Number of Codes Uploaded</th> -->
     </tr>
   </thead>
   <tbody>
@@ -38,7 +42,7 @@
         <td><%= history[0] %></td>
         <td id="description"><%= history[1] %></td>
         <td><%= history[2] %></td>
-        <td><%= history[3] %></td>
+        <!-- <td><%= history[3] %></td> -->
       </tr>
     <% end %>
   </tbody>
