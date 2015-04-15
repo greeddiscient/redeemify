@@ -39,4 +39,12 @@ class Vendor < ActiveRecord::Base
 
   	end # end self.import(file)
 
+
+  	def self.update_profile_vendor(current_vendor,info)
+  		current_vendor.update_attribute(:cashValue, info["cashValue"])
+  		current_vendor.update_attribute(:expiration, info["expiration"])
+  		current_vendor.update_attribute(:helpLink, info["helpLink"])
+  		current_vendor.update_attribute(:instruction, info["instruction"])
+  	end # end self.profile()
+
 end

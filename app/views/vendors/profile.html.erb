@@ -7,7 +7,7 @@
  <p class="backtohome"><%= link_to "Home", '/vendors/home' %></p>
 
 
-<h3 class="upload_text">Update your profile</h3>  <%= form_tag update_vendor_profile_path, multipart: true do %>
+<h3 class="upload_text">Update your profile</h3>  <%= form_tag update_profile_vendors_path, multipart: true do %>
     
     <h3 class="upload_text">Cash Value</h3> 
     <textarea name="cashValue" id="cashValue" cols="8" rows="1" placeholder="Enter the cash value"></textarea>

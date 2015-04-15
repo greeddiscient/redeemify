@@ -24,6 +24,7 @@ Auth::Application.routes.draw do
   
   resources :vendors do
     collection {post :import}
+    collection {post :update_profile}
     resources :vendorcodes
   end
   ActiveAdmin.routes(self)

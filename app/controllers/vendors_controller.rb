@@ -62,14 +62,23 @@ class VendorsController < ApplicationController
   end
 
   def profile
-   @vendor = Vendor.find(session[:vendor_id])
+    @vendor = Vendor.find(session[:vendor_id])
     @vendorcodes = @vendor.vendorCodes.all
   end
 
   def update_profile
-    @vendor = Vendor.find(session[:vendor_id])
-    params[:comment] 
+    current_vendor=Vendor.find(session[:vendor_id])
+    @info = {}
+    @info["cashValue"] = params[:cashValue]
+    @info["instruction"] = params[:instruction]
+    @info["helpLink"] = params[:helpLink]
+    @info["expiration"] = params[:expiration]
+    Vendor.update_profile_vendor(current_vendor,@info)
+    debugger
+    redirect_to '/vendors/home', notice: "Profile Updated"
   end
+
+
 
   def show
   end
