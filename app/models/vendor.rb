@@ -36,7 +36,7 @@ class Vendor < ActiveRecord::Base
 	    	current_vendor.update_attribute(:expiration, "")
 	    end
 	    if current_vendor.cashValue.nil?
-	    	current_vendor.update_attribute(:cashValue, "1.1")
+	    	current_vendor.update_attribute(:cashValue, "0")
 	    end
 
 

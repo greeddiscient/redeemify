@@ -63,6 +63,8 @@ class SessionsController < ApplicationController
         if providerCode != nil 
           # 1st time
           providerCode.update_attribute(:user_id, current_user.id)
+          providerCode.update_attribute(:user_name, current_user.name)
+          providerCode.update_attribute(:email, current_user.email)
           @current_code = params[:code]
 
           current_user.code = @current_code
@@ -82,6 +84,8 @@ class SessionsController < ApplicationController
             # debugger
             if code != nil
               code.update_attribute(:user_id, current_user.id)
+              code.update_attribute(:user_name, current_user.name)
+              code.update_attribute(:email, current_user.email)
               # debugger
               @list_codes[vendor.name] = code.code
               @instruction[vendor.name] = vendor.instruction
