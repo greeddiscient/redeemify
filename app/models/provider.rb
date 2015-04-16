@@ -27,4 +27,14 @@ class Provider < ActiveRecord::Base
 	    current_provider.update_attribute(:history, history)
   	end # end self.import(file)
 
+
+  	def self.remove_unclaimed_codes(current_provider)
+  		unclaimedCodes=current_provider.providerCodes.where(:user_id => nil)
+  		unclaimedCodes.each do |code|
+  			code.destroy
+  		end
+  	end
+
+
+
 end

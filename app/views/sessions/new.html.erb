@@ -9,18 +9,13 @@
     <h1> REDEEM YOUR CODE </h1>
   </div>
 
+  <% if @vendor_user %>
+  <div class = "row1">
+    <%= link_to "Login as a vendor", '/sessions/change_to_vendor', :id => "upload" %>
+  </div>
+  <% end %>
+
   
-   
-   
- <!--  </p>
-  <p>
-    <strong>Provider:</strong>
-    
-  </p> -->
-  <!-- <p>
-    <strong>OmniAuth UID:</strong>
-    <%= current_user.uid %>
-  </p> -->
   <div class = "formcode">
   
   <%= form_tag("/sessions/customer", method: "get") do %>

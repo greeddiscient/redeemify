@@ -37,7 +37,6 @@ class VendorsController < ApplicationController
       @histories = @histories.split("|||||")
 
 
-      # @history1 = histories[0].split("+++++")
 
       @histories_array=[]
       @histories.each do |history|
@@ -86,6 +85,9 @@ class VendorsController < ApplicationController
   def change_to_user
     current_vendor=Vendor.find(session[:vendor_id])
     current_user=User.find_by_provider_and_email(current_vendor.provider, current_vendor.email)
+    if current_user.nil?
+     current_user =  User.create!(:provider => current_vendor.provider, :name => current_vendor.name, :email => current_vendor.email)
+    end
     session[:user_id]=current_user.id
     if current_user.code == nil || current_user.code==""
       redirect_to '/sessions/new', notice: "Changed to user account"
@@ -102,10 +104,12 @@ class VendorsController < ApplicationController
   def edit
   end
 
-  # def destroy
-  #   session[:vendor_id] = nil
-  #   redirect_to root_url, notice: "Signed out!"
-  # end
+  def destroy
+    session[:user_id] = nil
+    session[:vendor_id] = nil
+    session[:provider_id] = nil
+    redirect_to root_url, notice: "Signed out!"
+  end
 
   def hello
   end

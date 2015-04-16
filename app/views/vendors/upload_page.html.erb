@@ -14,7 +14,7 @@
 </div> -->
 
 <h3 class="upload_text">Attach .csv file </h3>  <%= form_tag import_vendors_path, multipart: true do %>
-<p> (a one column CSV file with "code" as the header)</p>
+<p> (please upload '.txt' file, each code per line)</p>
     <%= file_field_tag :file %> 
     <h3 class="upload_text">Comment: </h3> 
     <textarea name="comment" id="comment" cols="50" rows="4" placeholder="Comment..."></textarea>

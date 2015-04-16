@@ -23,6 +23,7 @@ Auth::Application.routes.draw do
   get 'providers/home'
   get 'providers/edit'
   get 'providers/upload_page'
+  get 'providers/remove_codes'
 
 
   match "/auth/:provider/callback", to: "sessions#create"

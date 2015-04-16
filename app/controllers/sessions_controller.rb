@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   
   def new
+    if session[:vendor_id] != nil
+      @vendor_user = session[:vendor_id]
+    end
     if current_user == nil
       @user = User.new
     else
@@ -56,8 +59,8 @@ class SessionsController < ApplicationController
       current_user = User.find(session[:user_id])
       # debugger
       if current_user.code.nil? || current_user.code == ""
-        providerCode = ProviderCode.where(:code => params[:code]).first
-        if providerCode != nil
+        providerCode = ProviderCode.where(:code => params[:code], :user_id => nil).first
+        if providerCode != nil 
           # 1st time
           providerCode.update_attribute(:user_id, current_user.id)
           @current_code = params[:code]
@@ -120,12 +123,17 @@ class SessionsController < ApplicationController
         end
       end
     end
-    @vendor_user = Vendor.find_by_provider_and_email(current_user.provider, current_user.email)
+    # @vendor_user = Vendor.find_by_provider_and_email(current_user.provider, current_user.email)
+    if session[:vendor_id] != nil
+      @vendor_user = session[:vendor_id]
+    end
   end
 
 
   def destroy
     session[:user_id] = nil
+    session[:vendor_id] = nil
+    session[:provider_id] = nil
     redirect_to root_url, notice: "Signed out!"
   end
 
@@ -134,6 +142,7 @@ class SessionsController < ApplicationController
   end
 
   def change_to_vendor
+    session[:user_id] = nil
     redirect_to '/vendors/home', notice: "Change to Vendor Account"
   end
 

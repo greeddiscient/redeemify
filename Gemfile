@@ -4,7 +4,9 @@ gem 'rails', '3.2.18'
 gem 'rake'
 gem 'rails_12factor'
 gem 'ffi', '1.9.6'
-gem 'sass', '3.1.20'
+# gem 'sass', '3.1.20'
+gem 'sass', '~> 3.2.0'
+# gem 'sass-rails', '~> 3.2.6'
 gem 'activeadmin'#, '0.6.2'
 # gem 'debugger'
 gem 'byebug'
@@ -14,6 +16,10 @@ gem 'byebug'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
+
+
+gem "therubyracer"
+gem "less-rails"
 
 gem 'rails3-generators'
 group :development, :test do
@@ -34,10 +40,11 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.6'
   gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-ui-rails'
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
