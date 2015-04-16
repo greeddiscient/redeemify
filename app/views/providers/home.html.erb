@@ -1,0 +1,44 @@
+<p class="account">Account from: <%= @provider.provider.upcase  %> | <%= @provider.name %> | <%= link_to "Log out", logout_path, :id => "logout-link" %></p>
+<div id="welcome">
+
+    <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
+  </div>
+
+<div class = "vendor_home_numcode">
+
+  <p class="r1">Number of codes used: <%= @codesUsed %></p>
+  <p class="r2">Number of codes remaining: <%= @codesRemain %></p>
+
+</div>
+<br>
+
+<div class = "row1">
+	 <%= link_to "Upload New Codes", '/providers/upload_page', :id => "upload" %>
+</div>
+
+
+   
+<h4 class="history">History</h4>
+  <div class = "vendor_table">
+
+<table>
+  <thead class = "header">
+    <tr>
+      <th >Upload Date</th>
+      <th >Comment</th>
+      <th >Number of Codes Uploaded</th>
+      <!-- <th >Number of Codes Uploaded</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories_array.each do |history| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= history[0] %></td>
+        <td id="description"><%= history[1] %></td>
+        <td><%= history[2] %></td>
+     
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

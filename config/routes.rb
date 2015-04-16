@@ -15,7 +15,16 @@ Auth::Application.routes.draw do
   get 'vendors/change_to_user'
   get 'sessions/change_to_vendor'
 
+
   get 'vendors/new'
+
+
+  get 'providers/index'
+  get 'providers/home'
+  get 'providers/edit'
+  get 'providers/upload_page'
+
+
   match "/auth/:provider/callback", to: "sessions#create"
   match "/auth/failure", to: "sessions#failure"
   match "/logout", to: "sessions#destroy", :as => "logout"
@@ -23,12 +32,21 @@ Auth::Application.routes.draw do
   resources :sessions
   resources :users do
     resources :vendorcodes
+    resources :provider
   end
+
   
   resources :vendors do
     collection {post :import}
     collection {post :update_profile}
     resources :vendorcodes
+  end
+
+
+  resources :providers do
+    collection {post :import}
+    collection {post :update_profile}
+    resources :providercodes
   end
   ActiveAdmin.routes(self)
 end

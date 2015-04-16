@@ -1,19 +1,22 @@
 class Vendor < ActiveRecord::Base 
-	require 'csv'
+	# require 'csv'
 	has_many :vendorCodes
 	attr_accessible :history, :provider, :email, :name , :description, :instruction, :website, :comment , :helpLink, :expiration, :cashValue
 
   	def self.import(file, current_vendor, info)
   		numberOfCodes = 0
   		date = ""
-    	CSV.foreach(file.path, headers: true) do |row|
-
-	      	code = row.to_hash # exclude the price field
-	      	# debugger
-	      	a = current_vendor.vendorCodes.create!(:code => code["code"], :name => current_vendor.name , :vendor => current_vendor)#, :instruction => info["instruction"], :help => info["help"], :expiration => info["expiration"])
-	      	numberOfCodes = numberOfCodes + 1
-	      	date = a.created_at
+    	# CSV.foreach(file.path, headers: true) do |row|
+    	f = File.open(file.path, "r")
+		f.each_line do |row|
+			row = row.gsub(/\s+/, "")
+			if row !=  ""
+		      	a = current_vendor.vendorCodes.create!(:code => row, :name => current_vendor.name , :vendor => current_vendor)#, :instruction => info["instruction"], :help => info["help"], :expiration => info["expiration"])
+		      	numberOfCodes = numberOfCodes + 1
+		      	date = a.created_at
+		     end
 		end # end CSV.foreach
+		f.close
 		history = current_vendor.history
 		
 	    # temp = date.to_s #+ "," #+ info["description"]+ "," + info["expiration"] + "," + numberOfCodes.to_s + "||||"

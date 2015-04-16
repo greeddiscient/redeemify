@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
     if current_user == nil
       @user = User.new
     else
-      if current_user.code == ""
+      # if current_user.code == ""
+      if current_user.code.nil?
         @user = User.new
       else
         redirect_to '/sessions/customer', notice: "Already register call from sessions#new"
@@ -17,24 +18,34 @@ class SessionsController < ApplicationController
     # user = User.from_omniauth(env["omniauth.auth"])
     auth = request.env["omniauth.auth"]
     
-    vendor = Vendor.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
-
-    if vendor != nil
-      userVendor=User.find_by_provider_and_email(vendor.provider, vendor.email)
-      if userVendor == nil
-        User.create(:provider=>vendor.provider, :email => vendor.email, :code => "")
-      end
-      session[:vendor_id]= vendor.id
-      redirect_to '/vendors/home', notice: "home page, vendor"
+    provider = Provider.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
+    if provider != nil
+      session[:provider_id]= provider.id
+      redirect_to '/providers/home', notice: "home page, Provider"
+    # end
     else
-      user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-      if user.code.nil? || user.code == ""
-        session[:user_id] = user.id
-        # redirect_to root_url, notice: "Signed in!"
-        redirect_to '/sessions/new', notice: "Signed in!"
+
+      vendor = Vendor.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
+
+
+      if vendor != nil
+        # userVendor=User.find_by_provider_and_email(vendor.provider, vendor.email)
+        # if userVendor == nil
+        #   User.create(:provider=>vendor.provider, :email => vendor.email, :code => "")
+        # end
+        session[:vendor_id]= vendor.id
+        redirect_to '/vendors/home', notice: "home page, vendor"
       else
-        session[:user_id]= user.id
-        redirect_to '/sessions/customer', notice: "Offer page"
+        user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+        # debugger
+        if user.code.nil? || user.code == ""
+          session[:user_id] = user.id
+          # redirect_to root_url, notice: "Signed in!"
+          redirect_to '/sessions/new', notice: "Signed in!"
+        else
+          session[:user_id]= user.id
+          redirect_to '/sessions/customer', notice: "Offer page"
+        end
       end
     end
   end
@@ -43,38 +54,46 @@ class SessionsController < ApplicationController
   def customer
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
+      # debugger
       if current_user.code.nil? || current_user.code == ""
-        #1st time
-        @current_code = params[:code]
-        current_user.code = @current_code
-        current_user.save!  
+        providerCode = ProviderCode.where(:code => params[:code]).first
+        if providerCode != nil
+          # 1st time
+          providerCode.update_attribute(:user_id, current_user.id)
+          @current_code = params[:code]
 
-        @total = 0
-        @list_codes = {}
-        @instruction = {}
-        @help = {}
-        @expiration = {}
-        @website = {}
-        @cashValue = {}
-        @vendors = Vendor.all
+          current_user.code = @current_code
+          current_user.save!  
 
-        @vendors.each do |vendor|
-          code = vendor.vendorCodes.where(:user_id=>nil).first
-          # debugger
-          if code != nil
-            code.update_attribute(:user_id, current_user.id)
+          @total = 0
+          @list_codes = {}
+          @instruction = {}
+          @help = {}
+          @expiration = {}
+          @website = {}
+          @cashValue = {}
+          @vendors = Vendor.all
+
+          @vendors.each do |vendor|
+            code = vendor.vendorCodes.where(:user_id=>nil).first
             # debugger
-            @list_codes[vendor.name] = code.code
-            @instruction[vendor.name] = vendor.instruction
-            @help[vendor.name] = vendor.helpLink
-            @expiration[vendor.name] = vendor.expiration
-            @website[vendor.name] = vendor.website
-            @cashValue[vendor.name] = vendor.cashValue
-            @total = @total + vendor.cashValue.gsub(/[^0-9\.]/,'').to_f
-          else
-            @list_codes[vendor.name] = "We are reloading with sleight of hand"
-          end 
-          # debugger
+            if code != nil
+              code.update_attribute(:user_id, current_user.id)
+              # debugger
+              @list_codes[vendor.name] = code.code
+              @instruction[vendor.name] = vendor.instruction
+              @help[vendor.name] = vendor.helpLink
+              @expiration[vendor.name] = vendor.expiration
+              @website[vendor.name] = vendor.website
+              @cashValue[vendor.name] = vendor.cashValue
+              @total = @total + vendor.cashValue.gsub(/[^0-9\.]/,'').to_f
+            else
+              @list_codes[vendor.name] = "We are reloading with sleight of hand"
+            end 
+            # debugger
+          end
+        else
+          redirect_to '/sessions/new', notice: "wrong code!"
         end
 
       else

@@ -1,4 +1,4 @@
-ActiveAdmin.register VendorCode do
+ActiveAdmin.register ProviderCode do
 index do   
     column :user_id                                                  
     column :code
