@@ -1,4 +1,5 @@
 ActiveAdmin.register VendorCode do
+  menu :priority => 7
 index do   
     # column :user_id  
     column :user_name

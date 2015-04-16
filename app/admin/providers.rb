@@ -1,4 +1,5 @@
 ActiveAdmin.register Provider do
+  menu :priority => 3
 index do                            
     #column :id                           
     column :name

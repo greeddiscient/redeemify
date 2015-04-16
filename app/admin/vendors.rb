@@ -1,4 +1,5 @@
 ActiveAdmin.register Vendor do
+  menu :priority => 4
 index do                            
     column :id                           
     column :name

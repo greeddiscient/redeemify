@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  menu :priority => 5 
 index do                            
     column :name                         
     column :code

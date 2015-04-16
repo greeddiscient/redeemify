@@ -1,4 +1,5 @@
 ActiveAdmin.register ProviderCode do
+  menu :priority => 6
 index do   
     # column :user_id 
     column :user_name
