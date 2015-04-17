@@ -60,11 +60,11 @@ class SessionsController < ApplicationController
       # debugger
       @list_codes, @instruction, @help, @expiration, @website, @cashValue, @total = {},{},{},{},{},{},0
 
-      if current_user.code.nil?
+      if current_user.code.nil? # provider code
         providerCode = ProviderCode.where(:code => params[:code], :user_id => nil).first
-        if providerCode != nil 
+        if providerCode != nil # if provider code is match with enter code
           # 1st time
-          providerCode.update_attributes(:user_id => current_user.id, :user_name => current_user.mame, :emai => current_user.email)
+          providerCode.update_attributes(:user_id => current_user.id, :user_name => current_user.name, :email => current_user.email)
           @current_code = params[:code]
 
           current_user.code = @current_code
@@ -88,7 +88,7 @@ class SessionsController < ApplicationController
             end 
             # debugger
           end
-        else
+        else # the provider code is not match
           redirect_to '/sessions/new', notice: "wrong code!"
         end
 
