@@ -10,10 +10,12 @@
   </div>
 
   <% if @vendor_user %>
+  <div class = "button-single">
   <div class = "row1">
-    <%= link_to "Login as a vendor", '/sessions/change_to_vendor', :id => "upload" %>
+    <%= link_to "Login as a vendor", '/sessions/change_to_vendor', {:id => "upload" , :style => 'color:#000'} %>
   </div>
   <% end %>
+  </div>
 
   
   <div class = "formcode">
