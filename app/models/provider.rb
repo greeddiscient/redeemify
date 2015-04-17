@@ -34,7 +34,5 @@ class Provider < ActiveRecord::Base
   			code.destroy
   		end
   	end
-
-
-
+  	
 end

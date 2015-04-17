@@ -7,7 +7,6 @@ class SessionsController < ApplicationController
     if current_user == nil
       @user = User.new
     else
-      # if current_user.code == ""
       if current_user.code.nil?
         @user = User.new
       else
@@ -17,8 +16,7 @@ class SessionsController < ApplicationController
   end
 
 
-  def create  ## Need to implement whether it's vendor or user
-    # user = User.from_omniauth(env["omniauth.auth"])
+  def create  # Need to implement whether it's vendor or user
     auth = request.env["omniauth.auth"]
     
     provider = Provider.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
@@ -31,22 +29,15 @@ class SessionsController < ApplicationController
 
 
       if vendor != nil
-        # userVendor=User.find_by_provider_and_email(vendor.provider, vendor.email)
-        # if userVendor == nil
-        #   User.create(:provider=>vendor.provider, :email => vendor.email, :code => "")
-        # end
         session[:vendor_id]= vendor.id
         redirect_to '/vendors/home', notice: "home page, vendor"
       else
         user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
         # debugger
         session[:user_id] = user.id
-        if user.code.nil?  # || user.code == ""
-          # session[:user_id] = user.id
-          # redirect_to root_url, notice: "Signed in!"
+        if user.code.nil? 
           redirect_to '/sessions/new', notice: "Signed in!"
         else
-          # session[:user_id]= user.id
           redirect_to '/sessions/customer', notice: "Offer page"
         end
       end

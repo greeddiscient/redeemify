@@ -5,13 +5,17 @@ class ProvidersController < ApplicationController
   end
 # --------------------------
   def import
-    current_provider=Provider.find(session[:provider_id])
-    @info = {}
-    @info["comment"] = params[:comment] 
+    if params[:file].nil?
+      redirect_to '/providers/upload_page', notice: "You have not upload a file"
+    else
+      current_provider=Provider.find(session[:provider_id])
+      @info = {}
+      @info["comment"] = params[:comment] 
+      
+      Provider.import(params[:file], current_provider,@info)
     
-    Provider.import(params[:file], current_provider,@info)
-  
-    redirect_to '/providers/home', notice: "Codes imported"
+      redirect_to '/providers/home', notice: "Codes imported"
+    end
   end
 
 

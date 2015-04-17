@@ -14,8 +14,8 @@ describe VendorsController do
 
       session[:vendor_id] = v.id
       session[:vendor_id].should_not be_nil
-      get 'home' # or :new
-      expect(response).to render_template :home
+      get 'profile' # or :new
+      expect(response).to render_template :profile
 
       get 'upload_page'
       expect(response).to render_template :upload_page

@@ -5,21 +5,16 @@ class VendorsController < ApplicationController
   end
 # --------------------------
   def import
-    current_vendor=Vendor.find(session[:vendor_id])
-    @info = {}
-    @info["comment"] = params[:comment] 
-    # @info["instruction"] = params[:instruction]
-    # @info["help"] = params[:helpLink]
-    # @info["expiration"] = params[:expiration]
-
-    # current_vendor.update_attribute(:history ="")
-    # history = current_vendor.history
-    # temp = 
-    # history.push(",,,")
-    # debugger
-    Vendor.import(params[:file], current_vendor,@info)
-  
-    redirect_to '/vendors/home', notice: "Codes imported"
+    if params[:file].nil?
+      redirect_to '/vendors/upload_page', notice: "You have not upload a file"
+    else
+      current_vendor=Vendor.find(session[:vendor_id])
+      @info = {}
+      @info["comment"] = params[:comment] 
+      Vendor.import(params[:file], current_vendor,@info)
+    
+      redirect_to '/vendors/home', notice: "Codes imported"
+    end
   end
 
 

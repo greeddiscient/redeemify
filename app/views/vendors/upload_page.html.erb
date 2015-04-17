@@ -1,4 +1,4 @@
-<p class="account">Account from: <%= @vendor.provider.upcase  %> | <%= @vendor.name %> | <%= link_to "Log out", logout_path, :id => "logout-link" %></p>
+<p class="account">Account from: <%= @vendor.provider.upcase  %> | <%= @vendor.name %> | <%= link_to "Logout", logout_path, :id => "logout-link" %></p>
 <div id="welcome">
 
     <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
@@ -7,17 +7,22 @@
     <h1>VENDOR</h1>
 </div>
  -->
- <p class="backtohome"><%= link_to "Home", '/vendors/home' %></p>
+ <div class = "home1">
+ <p class="homee"><%= link_to "Home", '/vendors/home' %></p>
+ </div>
 <!-- <div class = "upload_group"> -->
 <!-- <div class = "upload_vendor">
 <p class="vendor_name"><%= @vendor.name %></p>
 </div> -->
 
-<h3 class="upload_text">Attach .csv file </h3>  <%= form_tag import_vendors_path, multipart: true do %>
-<p> (please upload '.txt' file, each code per line)</p>
+<h3 class="upload_text">Attach .txt file </h3>  <%= form_tag import_vendors_path, multipart: true do %>
+<p class = "upload_text"> (please upload '.txt' file, each code per line)</p>
+<br>
+    <div class = "upload_text">
     <%= file_field_tag :file %> 
+    </div>
     <h3 class="upload_text">Comment: </h3> 
-    <textarea name="comment" id="comment" cols="50" rows="4" placeholder="Comment..."></textarea>
+    <textarea name="comment" id="comments" cols="50" rows="4" placeholder="Comment..."></textarea>
 
     <br>
     <br>
@@ -46,9 +51,10 @@
 </body>
 </html>
 
-
+<div class="home1">
     <%= submit_tag "Submit", :id => "submit"%>
   <% end %>
+</div>
 </div>
 <!-- 
 <div class="container">

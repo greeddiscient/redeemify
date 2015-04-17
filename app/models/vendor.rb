@@ -9,9 +9,9 @@ class Vendor < ActiveRecord::Base
     	# CSV.foreach(file.path, headers: true) do |row|
     	f = File.open(file.path, "r")
 		f.each_line do |row|
-			row = row.gsub(/\s+/, "")
-			if row !=  ""
-		      	a = current_vendor.vendorCodes.create!(:code => row, :name => current_vendor.name , :vendor => current_vendor)#, :instruction => info["instruction"], :help => info["help"], :expiration => info["expiration"])
+			row = row.gsub(/\s+/, "")  # 12 3 4 --> 1234, 
+			if row !=  ""   # don't get any blank code
+		      	a = current_vendor.vendorCodes.create!(:code => row, :name => current_vendor.name , :vendor => current_vendor)
 		      	numberOfCodes = numberOfCodes + 1
 		      	date = a.created_at
 		     end
@@ -19,35 +19,19 @@ class Vendor < ActiveRecord::Base
 		f.close
 		history = current_vendor.history
 		
-	    # temp = date.to_s #+ "," #+ info["description"]+ "," + info["expiration"] + "," + numberOfCodes.to_s + "||||"
 	    date = date.to_formatted_s(:long_ordinal)
 	    if history == nil
-		    # history = "#{date}+++++#{info["comment"]}+++++#{info["expiration"]}+++++#{numberOfCodes.to_s}|||||"
 	    	history = "#{date}+++++#{info["comment"]}+++++#{numberOfCodes.to_s}|||||"
 	    else
-	    	# history = "#{history}#{date}+++++#{info["comment"]}+++++#{info["expiration"]}+++++#{numberOfCodes.to_s}|||||"
 	    	history = "#{history}#{date}+++++#{info["comment"]}+++++#{numberOfCodes.to_s}|||||"
 	    end
 	    current_vendor.update_attribute(:history, history)
-	    # if current_vendor.instruction.nil?
-	    # 	current_vendor.update_attribute(:instruction, "")
-	    # end
-	    # if current_vendor.expiration.nil?
-	    # 	current_vendor.update_attribute(:expiration, "")
-	    # end
-	    # if current_vendor.cashValue.nil?
-	    # 	current_vendor.update_attribute(:cashValue, "0")
-	    # end
 
 
   	end # end self.import(file)
 
 
   	def self.update_profile_vendor(current_vendor,info)
-  		# current_vendor.update_attribute(:cashValue, info["cashValue"])
-  		# current_vendor.update_attribute(:expiration, info["expiration"])
-  		# current_vendor.update_attribute(:helpLink, info["helpLink"])
-  		# current_vendor.update_attribute(:instruction, info["instruction"])
   		current_vendor.update_attributes(:cashValue => info["cashValue"], :expiration => info["expiration"], :helpLink => info["helpLink"],:instruction => info["instruction"])
   	end # end self.profile()
 

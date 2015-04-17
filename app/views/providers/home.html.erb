@@ -11,37 +11,36 @@
 
 </div>
 <br>
-
+<div class = "group-buttons2">
 <div class = "row1">
-	 <%= link_to "Upload New Codes", '/providers/upload_page', :id => "upload" %>
+	 <%= link_to "Upload New Codes", '/providers/upload_page', {:id => "upload" , :style => 'color:#000'} %>
 </div>
 <div class = "row1">
-   <%= link_to "Remove Unclaimed Codes", '/providers/remove_codes', :id => "upload" %>
+   <%= link_to "Remove Unclaimed Codes", '/providers/remove_codes', {:id => "upload" , :style => 'color:#000'} %>
 </div>
 
-
+</div>
    
 <h4 class="history">History</h4>
   <div class = "vendor_table">
 
 <table>
-  <thead class = "header">
-    <tr>
-      <th >Upload Date</th>
-      <th >Comment</th>
-      <th >Number of Codes Uploaded</th>
-      <!-- <th >Number of Codes Uploaded</th> -->
+  <tr class = "vendor_header">
+    
+      <td width = "20%">Upload Date</td>
+      <td width = "60%">Comment</td>
+      <td width = "20%">Number of Codes Uploaded</td>
+  
     </tr>
-  </thead>
-  <tbody>
+
     <% @histories_array.each do |history| %>
-      <tr class="<%= cycle('odd', 'even') %>">
-        <td><%= history[0] %></td>
-        <td id="description"><%= history[1] %></td>
-        <td><%= history[2] %></td>
+      <tr class="<%= cycle('oddd', 'evenn') %>">
+        <td width = "20%"><%= history[0] %></td>
+        <td width = "60%" id="descriptions"><%= history[1] %></td>
+        <td width = "20%"><%= history[2] %></td>
      
       </tr>
     <% end %>
-  </tbody>
+
 </table>
 </div>

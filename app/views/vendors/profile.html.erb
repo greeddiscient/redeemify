@@ -4,23 +4,29 @@
     <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
 </div>
 
- <p class="backtohome"><%= link_to "Home", '/vendors/home' %></p>
+<div class = "home1">
+ <p class="homee"><%= link_to "Home", '/vendors/home' %></p>
+</div>
 
-
-<h3 class="upload_text">Update your profile</h3>  <%= form_tag update_profile_vendors_path, multipart: true do %>
+<h4 class="loginwith3">Update your profile</h4>  <%= form_tag update_profile_vendors_path, multipart: true do %>
     
     <h3 class="upload_text">Cash Value</h3> 
-    <textarea name="cashValue" id="cashValue" cols="8" rows="1" placeholder="Enter the cash value"></textarea>
+
+
+
+    <textarea name="cashValue" id="cashValue" cols="8" rows="2"   > <%= @vendor.cashValue %></textarea>
 
     <h3 class="upload_text">Expiration Day</h3> 
-    <h3><input type="text" name="expiration" id="expiration" value= "mm/dd/yyyy"></h3>
+    <input type="text" name="expiration" id="expiration" value = <%= @vendor.expiration %> cols="1" rows="1">
 
     <h3 class="upload_text">Help link</h3> 
-    <textarea name="helpLink" id = "helpLink" cols="50" rows="4" placeholder ="Help link..."></textarea>
+    <textarea name="helpLink" id = "helpLink" cols="50" rows="2"  ><%= @vendor.helpLink %></textarea>
 
+    <h3 class="upload_text">Offer's Description </h3> 
+    <textarea name="description" id="description" cols="50" rows="4" value ="Offer's Description..."></textarea>
 
-    <h3 class="upload_text">Instruction to redeem the code</h3> 
-    <textarea name="instruction" id="instruction" cols="50" rows="4" placeholder ="Instruction to redeem the code..."></textarea>
+    <h3 class="upload_text">Instructions to redeem the code</h3> 
+    <textarea name="instruction" id="instruction" cols="50" rows="4"  > <%= @vendor.instruction %></textarea>
 
     <br>
     <br>
@@ -49,10 +55,13 @@
 </body>
 </html>
 
-
+  <div class = "home1">
     <%= submit_tag "SUBMIT", :id => "submit"%>
   <% end %>
-</div>
+  </div>
+  <br>
+  <br>
+
 
 
 
