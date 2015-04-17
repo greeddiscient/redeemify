@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
     if provider != nil
       session[:provider_id]= provider.id
       redirect_to '/providers/home', notice: "home page, Provider"
-    # end
     else
 
       vendor = Vendor.find_by_provider_and_email(auth["provider"], auth["info"]["email"])
@@ -41,12 +40,13 @@ class SessionsController < ApplicationController
       else
         user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
         # debugger
-        if user.code.nil? || user.code == ""
-          session[:user_id] = user.id
+        session[:user_id] = user.id
+        if user.code.nil?  # || user.code == ""
+          # session[:user_id] = user.id
           # redirect_to root_url, notice: "Signed in!"
           redirect_to '/sessions/new', notice: "Signed in!"
         else
-          session[:user_id]= user.id
+          # session[:user_id]= user.id
           redirect_to '/sessions/customer', notice: "Offer page"
         end
       end
@@ -58,35 +58,24 @@ class SessionsController < ApplicationController
     if session[:user_id] != nil
       current_user = User.find(session[:user_id])
       # debugger
-      if current_user.code.nil? || current_user.code == ""
+      @list_codes, @instruction, @help, @expiration, @website, @cashValue, @total = {},{},{},{},{},{},0
+
+      if current_user.code.nil?
         providerCode = ProviderCode.where(:code => params[:code], :user_id => nil).first
         if providerCode != nil 
           # 1st time
-          providerCode.update_attribute(:user_id, current_user.id)
-          providerCode.update_attribute(:user_name, current_user.name)
-          providerCode.update_attribute(:email, current_user.email)
+          providerCode.update_attributes(:user_id => current_user.id, :user_name => current_user.mame, :emai => current_user.email)
           @current_code = params[:code]
 
           current_user.code = @current_code
           current_user.save!  
 
-          @total = 0
-          @list_codes = {}
-          @instruction = {}
-          @help = {}
-          @expiration = {}
-          @website = {}
-          @cashValue = {}
           @vendors = Vendor.all
 
           @vendors.each do |vendor|
             code = vendor.vendorCodes.where(:user_id=>nil).first
-            # debugger
             if code != nil
-              code.update_attribute(:user_id, current_user.id)
-              code.update_attribute(:user_name, current_user.name)
-              code.update_attribute(:email, current_user.email)
-              # debugger
+              code.update_attributes(:user_id => current_user.id, :user_name => current_user.name, :email => current_user.email)
               @list_codes[vendor.name] = code.code
               @instruction[vendor.name] = vendor.instruction
               @help[vendor.name] = vendor.helpLink
@@ -106,13 +95,6 @@ class SessionsController < ApplicationController
       else
         #2nd time
         @current_code = current_user.code
-        @list_codes = {}
-        @instruction = {}
-        @help = {}
-        @expiration = {}
-        @website = {}
-        @cashValue = {}
-        @total = 0
         @vendorCodes = VendorCode.where(:user_id => current_user.id)
 
         @vendorCodes.each do |vendorCode|

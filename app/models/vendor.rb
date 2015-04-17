@@ -29,25 +29,26 @@ class Vendor < ActiveRecord::Base
 	    	history = "#{history}#{date}+++++#{info["comment"]}+++++#{numberOfCodes.to_s}|||||"
 	    end
 	    current_vendor.update_attribute(:history, history)
-	    if current_vendor.instruction.nil?
-	    	current_vendor.update_attribute(:instruction, "")
-	    end
-	    if current_vendor.expiration.nil?
-	    	current_vendor.update_attribute(:expiration, "")
-	    end
-	    if current_vendor.cashValue.nil?
-	    	current_vendor.update_attribute(:cashValue, "0")
-	    end
+	    # if current_vendor.instruction.nil?
+	    # 	current_vendor.update_attribute(:instruction, "")
+	    # end
+	    # if current_vendor.expiration.nil?
+	    # 	current_vendor.update_attribute(:expiration, "")
+	    # end
+	    # if current_vendor.cashValue.nil?
+	    # 	current_vendor.update_attribute(:cashValue, "0")
+	    # end
 
 
   	end # end self.import(file)
 
 
   	def self.update_profile_vendor(current_vendor,info)
-  		current_vendor.update_attribute(:cashValue, info["cashValue"])
-  		current_vendor.update_attribute(:expiration, info["expiration"])
-  		current_vendor.update_attribute(:helpLink, info["helpLink"])
-  		current_vendor.update_attribute(:instruction, info["instruction"])
+  		# current_vendor.update_attribute(:cashValue, info["cashValue"])
+  		# current_vendor.update_attribute(:expiration, info["expiration"])
+  		# current_vendor.update_attribute(:helpLink, info["helpLink"])
+  		# current_vendor.update_attribute(:instruction, info["instruction"])
+  		current_vendor.update_attributes(:cashValue => info["cashValue"], :expiration => info["expiration"], :helpLink => info["helpLink"],:instruction => info["instruction"])
   	end # end self.profile()
 
   	def self.remove_unclaimed_codes(current_vendor)

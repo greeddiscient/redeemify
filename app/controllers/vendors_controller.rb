@@ -26,25 +26,31 @@ class VendorsController < ApplicationController
 # ---------------
   def home
     @vendor = Vendor.find(session[:vendor_id])
-    @vendorcodes= @vendor.vendorCodes
-
-    @codesRemain = @vendorcodes.where(:user_id => nil).count
-    @codesUsed = @vendorcodes.count - @codesRemain
-
-
-    @histories = @vendor.history
-    if @histories != nil
-      @histories = @histories.split("|||||")
-
-
-
-      @histories_array=[]
-      @histories.each do |history|
-        temp = history.split("+++++")
-        @histories_array.push(temp)
-      end
+    if @vendor.instruction.nil? || @vendor.helpLink.nil? || @vendor.cashValue.nil? || @vendor.expiration.nil?
+      redirect_to '/vendors/profile', notice: "Please complete all fields of your profile"
+    # elsif @vendor.vendorCodes.where(:user_id => nil).count == 0
+    #   redirect_to '/vendors/upload_page', notice: "you have 0 remmaining codes, please upload codes"
     else
-      @histories_array=[]
+      @vendorcodes= @vendor.vendorCodes
+
+      @codesRemain = @vendorcodes.where(:user_id => nil).count
+      @codesUsed = @vendorcodes.count - @codesRemain
+
+
+      @histories = @vendor.history
+      if @histories != nil
+        @histories = @histories.split("|||||")
+
+
+
+        @histories_array=[]
+        @histories.each do |history|
+          temp = history.split("+++++")
+          @histories_array.push(temp)
+        end
+      else
+        @histories_array=[]
+      end
     end
   end
 
@@ -67,11 +73,23 @@ class VendorsController < ApplicationController
 
   def update_profile
     current_vendor=Vendor.find(session[:vendor_id])
+    if current_vendor.cashValue.nil?
+      current_vendor.update_attribute(:cashValue, "0")
+    end
+
     @info = {}
-    @info["cashValue"] = params[:cashValue]
-    @info["instruction"] = params[:instruction]
-    @info["helpLink"] = params[:helpLink]
-    @info["expiration"] = params[:expiration]
+    if params[:cashValue] != ""
+      @info["cashValue"] = params[:cashValue]
+    end
+    if params[:instruction] != ""
+      @info["instruction"] = params[:instruction]
+    end
+    if params[:helpLink] != ""
+      @info["helpLink"] = params[:helpLink]
+    end
+    if params[:expiration] != ""
+      @info["expiration"] = params[:expiration]
+    end
     Vendor.update_profile_vendor(current_vendor,@info)
     redirect_to '/vendors/home', notice: "Profile Updated"
   end
