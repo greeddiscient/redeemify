@@ -12,16 +12,14 @@ Background:
 Scenario:
 	
 	Given I am signed in as a vendor "vendor2" and user ID "54321" with "facebook"
+	And I have updated the vendor profile
+	Then show me the page
 	And I press "upload" link
 	Then I should be on the vendor upload page
 	And I attach a file with vendor codes inside
-	And I fill in "description" with "Lalala"
-	And I fill in "instruction" with "My instructions"
 	And I press "submit" button
 	Then I can see "Codes imported"
 	Then I press "upload" link
 	And I attach a file with vendor codes inside
-	And I fill in "description" with "Lalala"
-	And I fill in "instruction" with "My instructions"
 	And I press "submit" button
 	Then I can see "Codes imported"

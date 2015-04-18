@@ -26,6 +26,20 @@ def set_omniauth_vendor(info)
 
 end
 
+def set_omniauth_provider(info)
+
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:facebook] = {
+    "provider" => info[:provider],
+    "info" => {
+      "name" => info[:name],
+      "email" => info[:email]
+      }
+  }
+
+end
+
 def set_invalid_omniauth(opts = {})
   credentials = { :provider => :facebook,
                   :invalid  => :invalid_crendentials

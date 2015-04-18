@@ -7,16 +7,21 @@ Feature: Vendor Login as User
 Background:
 	
 	Given a vendor "Github" and user ID "12345" registered with "facebook"
-    And this vendor also registered as a user
+    And the following provider codes exist:
+    | code  | provider | upload     | expiry_date | code_type |
+    | 12345 | Amazon   | 01-01-2015 | 01-01-2016  | free_repo |
+
 
 Scenario: 
         
     Then I am on the user login page
     And I am signed in as a vendor "Github" and user ID "12345" with "facebook"
-    Then I can see "Login as a vendor"
-    And I can see "Login as a user"
-    When I click "vendor-login"
-    Then I should be on the vendor page
-    When I go back
-    And I click "Login as a user"
-    Then I should be on the view offer page
+    And I have updated the vendor profile
+    Then I can see "Login as a user"
+    When I press "user-login" link
+    And I can see "Redeem Your Code"
+    When I fill in "code" with "12345"
+    And I press "submit" button
+    Then I can see "Total Offer Value"
+    And I press "vendor-login" link
+    Then I can see "Number of codes remaining"

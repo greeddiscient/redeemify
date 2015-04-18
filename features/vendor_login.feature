@@ -12,6 +12,7 @@ Scenario: successful login after entering valid credentials
 
 	Given I am on the user login page
 	Then I am signed in as a vendor "vendor1" and user ID "12345" with "facebook"
+	And I have updated the vendor profile
 	Then I should be on the vendor page
 
 Scenario: succesful logout after logged in

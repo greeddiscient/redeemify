@@ -4,12 +4,19 @@ Feature: Enter Provider Code (Story 1b)
     So that I can view my offers
     I want to enter the provider code
 
+Background:
+	Given the following provider codes exist:
+    | code  | provider   | created_at | updated_at | vendor_id | user_id |
+    | 12345 | Amazon     | 01-01-2015 | 01-01-2016 | 1         |    nil  |
+
 Scenario: login successful after entering correct serial code
 	
 	Given I am on the user login page
-    Then I am signed in with "Facebook"
-	And I am on the code entry page
-    And I can see "Redeem your code"
-	When I fill in "code" with "9283084"
-	And I press "Submit" button
+    Then I am signed in with "facebook"
+    And I can see "Redeem Your Code"
+	When I fill in "code" with "9998"
+	And I press "submit" button
+	Then I can see "wrong code!"
+	When I fill in "code" with "12345"
+	And I press "submit" button
 	Then I should be on the offer page

@@ -15,14 +15,12 @@ Scenario:
 	And I press "upload" link
 	Then I should be on the provider upload page
 	And I attach a file with provider codes inside
-	And I fill in "description" with "Lalala"
-	And I fill in "instruction" with "My instructions"
+	And I fill in "comments" with "test comments"
+	Then show me the page
 	And I press "submit" button
 	Then I can see "Codes imported"
 	Then I press "upload" link
 	And I attach a file with provider codes inside
-	And I fill in "description" with "Lalala"
-	And I fill in "instruction" with "My instructions"
-	And I fill in "cash_value" with "40"
+	And I fill in "comments" with "test comments"
 	And I press "submit" button
 	Then I can see "Codes imported"

@@ -14,6 +14,7 @@ Auth::Application.routes.draw do
   get 'vendors/remove_codes'
   get 'vendors/change_to_user'
   get 'sessions/change_to_vendor'
+  get 'admin/login'
 
 
   get 'vendors/new'

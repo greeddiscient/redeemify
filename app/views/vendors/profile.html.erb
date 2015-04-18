@@ -17,7 +17,11 @@
     <textarea name="cashValue" id="cashValue" cols="8" rows="2"   > <%= @vendor.cashValue %></textarea>
 
     <h3 class="upload_text">Expiration Day</h3> 
-    <input type="text" name="expiration" id="expiration" value = <%= @vendor.expiration %> cols="1" rows="1">
+    <% if @vendor.expiration == nil %>
+    <input type="text" name="expiration" id="expiration"  cols="1" rows="1" placeholder = "mm/dd/yyyy"></input>
+    <% else%>
+    <input type="text" name="expiration" id="expiration"  cols="1" rows="1"><%= @vendor.expiration %></input>
+    <%end%>
 
     <h3 class="upload_text">Help link</h3> 
     <textarea name="helpLink" id = "helpLink" cols="50" rows="2"  ><%= @vendor.helpLink %></textarea>

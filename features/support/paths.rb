@@ -15,11 +15,13 @@ module NavigationHelpers
       
     when /^the vendor upload page$/ then '/vendors/upload_page'
     when /^the code entry page$/ then '/sessions/enter'
-    when /^the offer page$/ then '/sessions/offer'
+    when /^the offer page$/ then '/sessions/customer'
     when /^the vendor page$/ then '/vendors/home'
     when /^the user login page$/ then root_url
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
     when /^the movies page$/ then '/movies'
+    when /^the provider upload page$/ then '/providers/upload_page'
+    when /^the admin login page$/ then '/admin/login'
 
 
 

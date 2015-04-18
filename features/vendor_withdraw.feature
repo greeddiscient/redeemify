@@ -20,6 +20,7 @@ Scenario:
         
     Then I am on the user login page
     Then I am signed in as a vendor "Github" and user ID "12345" with "facebook"
+    And I have updated the vendor profile
     And I can see "Number of codes remaining: 4"
-    When I click "withdraw" under row 1
+    When I press "remove-unclaimed-codes" link
     Then I can see "Number of codes remaining: 0"

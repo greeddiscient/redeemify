@@ -24,6 +24,37 @@ Given /the following vendor codes exist/ do |vendor_codes_table|
   end
 end
 
+Given /I have already registered as an admin/ do
+  AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+end
+
+Given /I am signed in as an admin/ do
+  fill_in("admin_user_email", :with => "admin@example.com")
+  fill_in("admin_user_password", :with => "password")
+  click_button("commit")
+end
+
+Given /the following provider codes exist/ do |provider_codes_table|
+  p = Provider.create!(:name => 'Amazon', :provider => 'facebook', :email => 'amazon@amazon.com')
+  provider_codes_table.hashes.each do |code|
+    p.providerCodes.create!(:code => code["code"], :provider => p)
+  end
+end
+
+Given /a provider "([^"]*)" exist$/ do |provider_name|
+  p = Provider.create!(:name => provider_name, :provider => "facebook", :email => "amazon@amazon.com")
+end
+
+Given /I am signed in as a provider "([^"]*)"$/ do |provider_name|
+  p = Provider.find_by_name(provider_name)
+  name = p.name
+  provider = p.provider
+  email = p.email
+  disable_test_omniauth()
+  set_omniauth_provider(:name => name, :provider => provider, :email=> email)
+  click_link("#{provider.downcase}-auth")
+end
+
 Given /the following vendors exist/ do |vendors_table|
   vendors_table.hashes.each do |vendor|
     Vendor.create(vendor)
@@ -32,6 +63,15 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
     visit path_to(page_name)
+end
+
+And /^I have updated the vendor profile/ do
+  fill_in("cashValue", :with => "1")
+  fill_in("expiration", :with => "11/11/2015")
+  fill_in("description", :with => "description")
+  fill_in("helpLink", :with => "www")
+  fill_in("instruction", :with => "instruction")
+  click_button("submit")
 end
 
 And /^(?:|I )have never registered$/ do
@@ -56,13 +96,14 @@ Given /^a vendor "(.*?)" and user ID "(.*?)" registered with "(.*?)"$/ do |name,
   vendor.uid = uid
   vendor.provider = provider
   vendor.email = 'test@gmail.com'
+  vendor.cashValue = '1'
   vendor.save
 end
 
-And /^I have already registered with "([^"]*)"$/ do |provider|
+And /^I have already registered with "([^"]*)" and provider code "([^"]*)"$/ do |provider, code|
   set_omniauth()
   click_link("#{provider.downcase}-auth")
-  fill_in("code", :with => "9283084")
+  fill_in("code", :with => code)
   click_button("Submit")
   click_link("logout-link")
 end
@@ -84,8 +125,8 @@ end
 When /^(?:|I )press "([^"]*)" link$/ do |link|
   if link.eql? "Log out"
     click_link("logout-link")
-  elsif link.eql? "upload"
-    click_link("upload")
+  else
+    click_link(link)
   end
 end
 
@@ -104,5 +145,9 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
 end
 
 And /^I attach a file with vendor codes inside$/ do
-  attach_file('file', File.join(Rails.root, 'features', 'upload-file', 'test.csv'))
+  attach_file('file', File.join(Rails.root, 'features', 'upload-file', 'test.txt'))
+end
+
+And /^I attach a file with provider codes inside$/ do
+  attach_file('file', File.join(Rails.root, 'features', 'upload-file', 'test.txt'))
 end
