@@ -1,46 +1,62 @@
-<p class="account">Account from: <%= @vendor.provider.upcase  %> | <%= @vendor.name %> | <%= link_to "Logout", logout_path, :id => "logout-link" %></p>
+<p class="account">Login with: <%= @vendor.provider.upcase  %> | Name: <%= @vendor.name %> | <%= link_to "Logout", logout_path, :id => "logout-link" %></p>
 <div id="welcome">
 
-    <h1> <%= image_tag('logo.png', :size => '100x100', :class => 'logo' ) %> REDEEMIFY</h1>
+    <h1> <%= image_tag('logo.png', :size => '400x100', :class => 'logo' ) %></h1>
   </div>
-<!-- <div class = "vendor">
-    <h1>VENDOR</h1>
-  </div> -->
+
 
 <div class = "vendor_home_numcode">
+  <p class="r1"># codes uploaded: <%= @vendor.uploadedCodes %></p>
+  <p class="r2">Current of Total code: <%= @vendor.totalCodes %></p>
+  <p class="r3"># codes used: <%= @vendor.usedCodes %></p>
+  <p class="r4"># codes remaining: <%= @vendor.unclaimCodes %></p>
+  <p class="r5"># codes removed: <%= @vendor.removedCodes %></p>
 
-  <p class="r1">Number of codes used: <%= @codesUsed %></p>
-  <p class="r2">Number of codes remaining: <%= @codesRemain %></p>
-  <!-- <p>History: <%= @history %></p> -->
 
 </div>
 <br>
+<br>
+<br>
+
+
+<% if flash[:error] != nil %>
+    <% flash.keys.each do |k| %> 
+       <center><font color="red"><%= flash[k] %></font></center>
+    <% end %> 
+<br>
+<% end %>
+
+
 <div class = "group-buttons">
 <div class = "row1">
-   <%= link_to "Login as a user", '/vendors/change_to_user', {:id => "user-login", :style => 'color:#000'} %>
+   <%= link_to "Login as a user", '/vendors/change_to_user', {:id => "upload", :style => 'color:#000'} %>
 </div>
 
 <div class = "row1">
 	 <%= link_to "Upload New Codes", '/vendors/upload_page', {:id => "upload", :style => 'color:#000'} %>
 </div>
 <div class = "row1">
-   <%= link_to "Update Your Profile", '/vendors/profile', {:id => "update-profile", :style => 'color:#000'} %>
+   <%= link_to "Update Your Profile", '/vendors/profile', {:id => "upload", :style => 'color:#000'} %>
 </div>
 
 <div class = "row1">
-   <%= link_to "Remove Unclaimed Codes", '/vendors/remove_codes', {:id => "remove-unclaimed-codes", :style => 'color:#000'} %>
+   <%= link_to "Remove Unclaimed Codes", '/vendors/remove_codes', {:id => "upload", :style => 'color:#000'} %>
 </div>
 </div>
    
 <h4 class="history">History</h4>
+
+<center><%= link_to "Clear History", '/vendors/clear_history', {:id => "upload", :style => 'color:#000'} %></center>
+
+
 <div class = "vendor_table">
 
 <table>
 
     <tr class = "vendor_header">
-      <td width = "20%">Upload Date</td>
-      <td width = "60%">Comment</td>
-      <td width = "20%">Number of Codes Uploaded</td>
+      <td width = "25%">Upload/Remove Date</td>
+      <td width = "50%">Comment</td>
+      <td width = "25%">Number of Codes Uploaded/Removed</td>
     </tr>
   
 <tbody>
@@ -56,3 +72,9 @@
   </tbody>
 </table>
 </div>
+
+
+
+
+
+

@@ -6,7 +6,7 @@ class VendorsController < ApplicationController
 # --------------------------
   def import
     if params[:file].nil?
-      redirect_to '/vendors/upload_page', notice: "You have not upload a file"
+      redirect_to '/vendors/upload_page', :flash => { :error => "You have not upload a file" }
     else
       current_vendor=Vendor.find(session[:vendor_id])
       @info = {}
@@ -21,15 +21,15 @@ class VendorsController < ApplicationController
 # ---------------
   def home
     @vendor = Vendor.find(session[:vendor_id])
-    if @vendor.instruction.nil? || @vendor.helpLink.nil? || @vendor.cashValue.nil? || @vendor.expiration.nil?
-      redirect_to '/vendors/profile', notice: "Please complete all fields of your profile"
+    if @vendor.instruction.nil? || @vendor.description.nil? ||@vendor.helpLink.nil? || @vendor.cashValue.nil? || @vendor.expiration.nil?
+      redirect_to '/vendors/profile', :flash => { :error => "Please complete all fields of your profile" }
     # elsif @vendor.vendorCodes.where(:user_id => nil).count == 0
     #   redirect_to '/vendors/upload_page', notice: "you have 0 remmaining codes, please upload codes"
     else
       @vendorcodes= @vendor.vendorCodes
-
+      @totalCodes = @vendorcodes.count
       @codesRemain = @vendorcodes.where(:user_id => nil).count
-      @codesUsed = @vendorcodes.count - @codesRemain
+      @codesUsed = @totalCodes - @codesRemain
 
 
       @histories = @vendor.history
@@ -46,6 +46,7 @@ class VendorsController < ApplicationController
       else
         @histories_array=[]
       end
+      @histories_array.reverse!
     end
   end
 
@@ -55,11 +56,6 @@ class VendorsController < ApplicationController
     @vendorcodes= @vendor.vendorCodes.all
   end
 
-  def viewCodes
-    @vendor = Vendor.find(session[:vendor_id])
-    @vendorcodes = @vendor.vendorCodes
-
-  end
 
   def profile
     @vendor = Vendor.find(session[:vendor_id])
@@ -73,11 +69,16 @@ class VendorsController < ApplicationController
     end
 
     @info = {}
-    if params[:cashValue] != ""
-      @info["cashValue"] = params[:cashValue]
+    cash = params[:cashValue]
+    cash = cash.gsub(/\s+/, "")
+    if cash != ""
+      @info["cashValue"] = cash
     end
     if params[:instruction] != ""
       @info["instruction"] = params[:instruction]
+    end
+    if params[:description] != ""
+      @info["description"] = params[:description]
     end
     if params[:helpLink] != ""
       @info["helpLink"] = params[:helpLink]
@@ -89,10 +90,26 @@ class VendorsController < ApplicationController
     redirect_to '/vendors/home', notice: "Profile Updated"
   end
 
-  def remove_codes
+  def remove_codes   #:usedCodes, :uploadedCodes, :totalCodes, :unclaimCodes, :removedCodes
     current_vendor=Vendor.find(session[:vendor_id])
-    Vendor.remove_unclaimed_codes(current_vendor)
-    redirect_to '/vendors/home', notice: "Unclaimed Codes Successfully Removed"
+    flag = current_vendor.vendorCodes.where(:user_id => nil)
+    if flag.count == 0
+      redirect_to '/vendors/home', :flash => { :error => "There's No Unclaimed Codes" }
+    else
+      contents = Vendor.remove_unclaimed_codes(current_vendor)
+      # redirect_to '/vendors/home', notice: "Unclaimed Codes Successfully Removed"
+      send_data contents,  :filename => "Unclaimed_Codes.txt" 
+    end
+  end
+
+  def clear_history
+    current_vendor=Vendor.find(session[:vendor_id])
+    if current_vendor.history.nil?
+      redirect_to '/vendors/home', :flash => { :error => "History is empty" }
+    else  
+      current_vendor.update_attribute(:history, nil)
+      redirect_to '/vendors/home', notice: "Cleared History"
+    end
   end
 
   def change_to_user
@@ -110,13 +127,6 @@ class VendorsController < ApplicationController
   end
 
 
-
-  def show
-  end
-
-  def edit
-  end
-
   def destroy
     session[:user_id] = nil
     session[:vendor_id] = nil
@@ -124,23 +134,6 @@ class VendorsController < ApplicationController
     redirect_to root_url, notice: "Signed out!"
   end
 
-  def hello
-  end
-
-  def welcome
-  end
-
-  def enter
-  end
-
-  def exit
-  end
-
-  def login
-  end
-
-  def logout
-  end
 
 
 end
