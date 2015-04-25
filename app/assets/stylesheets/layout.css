@@ -80,7 +80,7 @@ textarea:focus {
 
 .up_view {height: 5em; width: 10em;}
 .account{text-align: right}
-.vendor_home_numcode {background: #e5e5e5;  margin-left:  auto; margin-right:auto; width: 200px; height: 80px; border-radius: 10px; margin-top: 15px; 
+.vendor_home_numcode {background: #e5e5e5;  margin-left:  auto; margin-right:auto; width: 200px; height: 160px; border-radius: 10px; margin-top: 15px; 
     border-radius: 6px 6px 6px 6px;
   border-style: none solid solid none;
   border-width: medium 1px 1px medium;
@@ -94,7 +94,8 @@ textarea:focus {
 
 }
 .vendor_home_numcode p {text-align: left; font-size: 12px;color: #000000;}
-.vendor_home_numcode p.r1{padding-top:4px}
+.vendor_home_numcode p.r1{padding-top:0px}
+.vendor_home_numcode p.r2{padding-top:6px}
 .field_text {width: 200px; margin-left: auto; margin-right: auto}
 
 /*p {font-size: 12px; text-align: right; color: #000000}*/
@@ -426,7 +427,7 @@ div.tooltip h3 {
 /*#b2e4fa*/
 .upload_group {text-align: center; margin-left: auto; margin-right: auto}
 .group-buttons {width:630px; margin: auto;}
-.group-buttons2 {width:350px; margin: auto;}
+.group-buttons2 {width:350px; margin: auto; margin-top: 0px !important}
 .button-single {width:150px; margin: auto;padding-top: 5px}
 .home1 {width : 80px; margin: auto;padding-top: 10px}
 .submit {width : 80px; margin-left: 300px}
