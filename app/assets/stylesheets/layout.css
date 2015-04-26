@@ -96,6 +96,24 @@ textarea:focus {
 .vendor_home_numcode p {text-align: left; font-size: 12px;color: #000000;}
 .vendor_home_numcode p.r1{padding-top:0px}
 .vendor_home_numcode p.r2{padding-top:6px}
+
+.customer_home_numcode {background: #e5e5e5;  margin-left:  auto; margin-right:auto; width: 200px; height: 80px; border-radius: 10px; margin-top: 15px; 
+    border-radius: 6px 6px 6px 6px;
+  border-style: none solid solid none;
+  border-width: medium 1px 1px medium;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+  font-family: Helvetica Neue;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 6px;
+
+                text-shadow:#fff 0 1px 0;color:#5e6469
+
+}
+.customer_home_numcode p {text-align: left; font-size: 12px;color: #000000;margin-left: 10px}
+.customer_home_numcode p.r1{padding-top:10px}
+.customer_home_numcode p.r2{padding-top:6px}
+
 .field_text {width: 200px; margin-left: auto; margin-right: auto}
 
 /*p {font-size: 12px; text-align: right; color: #000000}*/
