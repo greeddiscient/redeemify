@@ -96,7 +96,7 @@ class SessionsController < ApplicationController
 
       else
         #2nd time
-        # @current_code = current_user.code
+        @current_code = current_user.code
         @vendorCodes = VendorCode.where(:user_id => current_user.id)
 
         @vendors = Vendor.all
@@ -142,12 +142,20 @@ class SessionsController < ApplicationController
   end
 
 
+
+  def delete_account
+
+  end
+
+
   def destroy
     session[:user_id] = nil
     session[:vendor_id] = nil
     session[:provider_id] = nil
     redirect_to root_url, notice: "Signed out!"
   end
+
+
 
   def failure
     redirect_to root_url, alert: "Authentication failed, please try again."

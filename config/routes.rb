@@ -6,6 +6,7 @@ Auth::Application.routes.draw do
   get 'sessions/index'
   get 'sessions/show'
   get 'sessions/enter'
+  get 'sessions/delete_account'
   get 'vendors/home'
   get 'vendors/edit'
   get 'vendors/upload_page'
