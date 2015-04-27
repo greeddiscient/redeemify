@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'google_chart'
+
 class VendorsController < ApplicationController
 
   def index
@@ -23,14 +26,8 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(session[:vendor_id])
     if @vendor.instruction.nil? || @vendor.description.nil? ||@vendor.helpLink.nil? || @vendor.cashValue.nil? || @vendor.expiration.nil?
       redirect_to '/vendors/profile', :flash => { :error => "Please complete all fields of your profile" }
-    # elsif @vendor.vendorCodes.where(:user_id => nil).count == 0
-    #   redirect_to '/vendors/upload_page', notice: "you have 0 remmaining codes, please upload codes"
     else
-      @vendorcodes= @vendor.vendorCodes
-      @totalCodes = @vendorcodes.count
-      @codesRemain = @vendorcodes.where(:user_id => nil).count
-      @codesUsed = @totalCodes - @codesRemain
-
+      
 
       @histories = @vendor.history
       if @histories != nil
@@ -46,8 +43,23 @@ class VendorsController < ApplicationController
       else
         @histories_array=[]
       end
-      @histories_array.reverse!
     end
+    @histories_array.reverse!
+
+    GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
+      bc.data "# codes uploaded", [@vendor.uploadedCodes], '080dcc'
+      bc.data "Current of Total code = sum of #codes remaining and #codes used", [@vendor.totalCodes], 'a1731d' 
+      bc.data "# codes used", [@vendor.usedCodes], 'c53711' 
+      bc.data "# codes remaining", [@vendor.unclaimCodes], '0c9200'
+      bc.data "# codes removed", [@vendor.removedCodes], '000000'
+      bc.show_legend = true
+      bc.stacked = false
+      bc.data_encoding = :extended
+
+      bc.axis :x , :range => [0,@vendor.uploadedCodes]
+      @graph =  bc.to_url
+    end
+
   end
 
 

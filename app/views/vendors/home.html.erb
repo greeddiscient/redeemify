@@ -5,7 +5,7 @@
   </div>
 
 
-<div class = "vendor_home_numcode">
+<!-- <div class = "vendor_home_numcode">
 <p class="r2">Current of Total code: <%= @vendor.totalCodes %></p>
   <p class="r1"># codes uploaded: <%= @vendor.uploadedCodes %></p>
   
@@ -14,7 +14,12 @@
   <p class="r5"># codes removed: <%= @vendor.removedCodes %></p>
 
 
-</div>
+</div> -->
+
+<!-- Graph -->
+<center><img src="<%= @graph %>"/></center>
+
+
 <br>
 <br>
 <br>
@@ -48,6 +53,9 @@
 <h4 class="history">History</h4>
 
 <center><%= link_to "Clear History", '/vendors/clear_history', {:id => "upload", :style => 'color:#000'} %></center>
+
+
+
 
 
 <div class = "vendor_table">

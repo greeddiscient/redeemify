@@ -1,7 +1,6 @@
 class ProvidersController < ApplicationController
 
   def index
-    # @vendor = Vendor.find(session[:vendor_id])
   end
 # --------------------------
   def import
@@ -24,10 +23,6 @@ class ProvidersController < ApplicationController
     @provider = Provider.find(session[:provider_id])
     @providerCodes= @provider.providerCodes
 
-    @totalCodes = @providerCodes.count
-    @codesRemain = @providerCodes.where(:user_id => nil).count
-    @codesUsed = @totalCodes - @codesRemain
-
 
     @histories = @provider.history
     if @histories != nil
@@ -42,6 +37,22 @@ class ProvidersController < ApplicationController
       @histories_array=[]
     end
     @histories_array.reverse!
+
+
+
+    GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
+      bc.data "# codes uploaded", [@provider.uploadedCodes], '080dcc'
+      bc.data "Current of Total code = sum of #codes remaining and #codes used", [@provider.totalCodes], 'a1731d' 
+      bc.data "# codes used", [@provider.usedCodes], 'c53711' 
+      bc.data "# codes remaining", [@provider.unclaimCodes], '0c9200'
+      bc.data "# codes removed", [@provider.removedCodes], '000000'
+      bc.show_legend = true
+      bc.stacked = false
+      bc.data_encoding = :extended
+
+      bc.axis :x , :range => [0,@provider.uploadedCodes]
+      @graph =  bc.to_url
+    end
   end
 
 

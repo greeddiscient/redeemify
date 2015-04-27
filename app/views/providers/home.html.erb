@@ -6,7 +6,7 @@
     <h1> <%= image_tag('logo.png', :size => '400x100', :class => 'logo' ) %></h1>
   </div>
 
-<div class = "vendor_home_numcode">
+<!-- <div class = "vendor_home_numcode">
 <p class="r2">Current of Total code: <%= @provider.totalCodes %></p>
   <p class="r1"># codes uploaded: <%= @provider.uploadedCodes %></p>
   <p class="r1"># codes used: <%= @provider.usedCodes %></p>
@@ -16,6 +16,13 @@
 <br>
 <br>
 <br>
+ -->
+
+<!-- Graph -->
+<center><img src="<%= @graph %>"/></center>
+<br>
+<br>
+
 
 <% if flash[:error] != nil %>
     <% flash.keys.each do |k| %> 

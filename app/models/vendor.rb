@@ -49,7 +49,7 @@ class Vendor < ActiveRecord::Base
 
   	def self.remove_unclaimed_codes(current_vendor)
   		unclaimedCodes=current_vendor.vendorCodes.where(:user_id => nil)
-  		num = current_vendor.count
+  		num = current_vendor.unclaimCodes
   		date = Time.now.to_formatted_s(:long_ordinal)
 
   		history = current_vendor.history

@@ -17,6 +17,10 @@ gem 'activeadmin'#, '0.6.2'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+# require 'rubygems'
+# require 'google_chart'
+
+gem 'gchartrb'
 
 gem "therubyracer"
 gem "less-rails"
