@@ -20,6 +20,9 @@ gem 'activeadmin'#, '0.6.2'
 # require 'rubygems'
 # require 'google_chart'
 
+
+gem 'gon'
+# gem 'rabl-rails'
 gem 'gchartrb'
 
 gem "therubyracer"

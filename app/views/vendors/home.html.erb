@@ -17,9 +17,10 @@
 </div> -->
 
 <!-- Graph -->
-<center><img src="<%= @graph %>"/></center>
 
+<center><div id="barchart_values" style="width: 900px; height: 150px;"></div></center>
 
+<br>
 <br>
 <br>
 <br>
@@ -49,6 +50,8 @@
    <%= link_to "Download And Remove Unclaimed Codes", '/vendors/remove_codes', {:id => "upload", :style => 'color:#000'} %>
 </div>
 </div>
+
+<br>
    
 <h4 class="history">History</h4>
 
@@ -84,6 +87,41 @@
 
 
 
+<html>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+ <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Quantity", { role: "style" } ],
+        ["Uploaded", gon.codes["uploaded"], "#080dcc"],
+        ["Current Of Total Code = #Used Codes + #Unclaimed Codes ", gon.codes["total"], "#b87333"],
+        ["Used", gon.codes["used"], "#c53711"],
+        ["Unclaimed", gon.codes["unclaim"], "#0c9200"],
+        ["Removed", gon.codes["removed"], "color: #000000"]
 
+      ]);
 
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Codes Data",
+        width: 400,
+        height: 200,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+
+</html>
 

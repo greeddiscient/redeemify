@@ -33,26 +33,34 @@ class ProvidersController < ApplicationController
         temp = history.split("+++++")
         @histories_array.push(temp)
       end
+      @histories_array.reverse!
     else
       @histories_array=[]
     end
-    @histories_array.reverse!
 
 
 
-    GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
-      bc.data "# codes uploaded", [@provider.uploadedCodes], '080dcc'
-      bc.data "Current of Total code = sum of #codes remaining and #codes used", [@provider.totalCodes], 'a1731d' 
-      bc.data "# codes used", [@provider.usedCodes], 'c53711' 
-      bc.data "# codes remaining", [@provider.unclaimCodes], '0c9200'
-      bc.data "# codes removed", [@provider.removedCodes], '000000'
-      bc.show_legend = true
-      bc.stacked = false
-      bc.data_encoding = :extended
+    # GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
+    #   bc.data "# codes uploaded", [@provider.uploadedCodes], '080dcc'
+    #   bc.data "Current of Total code = sum of #codes remaining and #codes used", [@provider.totalCodes], 'a1731d' 
+    #   bc.data "# codes used", [@provider.usedCodes], 'c53711' 
+    #   bc.data "# codes remaining", [@provider.unclaimCodes], '0c9200'
+    #   bc.data "# codes removed", [@provider.removedCodes], '000000'
+    #   bc.show_legend = true
+    #   bc.stacked = false
+    #   bc.data_encoding = :extended
 
-      bc.axis :x , :range => [0,@provider.uploadedCodes]
-      @graph =  bc.to_url
-    end
+    #   bc.axis :x , :range => [0,@provider.uploadedCodes]
+    #   @graph =  bc.to_url
+    # end
+
+    @hash = {"uploaded" => @provider.uploadedCodes, "total" => @provider.totalCodes, "used" => @provider.usedCodes, "unclaim" => @provider.unclaimCodes, "removed" => @provider.removedCodes }
+    gon.codes = @hash
+
+
+
+
+
   end
 
 

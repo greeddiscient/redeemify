@@ -40,26 +40,33 @@ class VendorsController < ApplicationController
           temp = history.split("+++++")
           @histories_array.push(temp)
         end
+        @histories_array.reverse!
       else
         @histories_array=[]
       end
     end
-    @histories_array.reverse!
 
-    GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
-      bc.data "# codes uploaded", [@vendor.uploadedCodes], '080dcc'
-      bc.data "Current of Total code = sum of #codes remaining and #codes used", [@vendor.totalCodes], 'a1731d' 
-      bc.data "# codes used", [@vendor.usedCodes], 'c53711' 
-      bc.data "# codes remaining", [@vendor.unclaimCodes], '0c9200'
-      bc.data "# codes removed", [@vendor.removedCodes], '000000'
-      bc.show_legend = true
-      bc.stacked = false
-      bc.data_encoding = :extended
+    # GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
+    #   bc.data "# codes uploaded", [@vendor.uploadedCodes], '080dcc'
+    #   bc.data "Current of Total code = sum of #codes remaining and #codes used", [@vendor.totalCodes], 'a1731d' 
+    #   bc.data "# codes used", [@vendor.usedCodes], 'c53711' 
+    #   bc.data "# codes remaining", [@vendor.unclaimCodes], '0c9200'
+    #   bc.data "# codes removed", [@vendor.removedCodes], '000000'
+    #   bc.show_legend = true
+    #   bc.stacked = false
+    #   bc.data_encoding = :extended
+    #   bc.shape_marker :circle, :color => "000000", :data_set_index => 2, :data_point_index => 4, :pixel_size => 10
+    #   bc.axis :x , :range => [0,@vendor.uploadedCodes]
+    #   @graph =  bc.to_url
+    # end
 
-      bc.axis :x , :range => [0,@vendor.uploadedCodes]
-      @graph =  bc.to_url
-    end
+    @hash = {"uploaded" => @vendor.uploadedCodes, "total" => @vendor.totalCodes, "used" => @vendor.usedCodes, "unclaim" => @vendor.unclaimCodes, "removed" => @vendor.removedCodes }
+    gon.codes = @hash
 
+
+
+
+  
   end
 
 
@@ -143,6 +150,7 @@ class VendorsController < ApplicationController
     session[:user_id] = nil
     session[:vendor_id] = nil
     session[:provider_id] = nil
+    gon.clear
     redirect_to root_url, notice: "Signed out!"
   end
 
