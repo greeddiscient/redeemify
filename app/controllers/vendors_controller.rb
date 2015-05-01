@@ -24,6 +24,8 @@ class VendorsController < ApplicationController
 # ---------------
   def home
     @vendor = Vendor.find(session[:vendor_id])
+
+   
     if @vendor.instruction.nil? || @vendor.description.nil? ||@vendor.helpLink.nil? || @vendor.cashValue.nil? || @vendor.expiration.nil?
       redirect_to '/vendors/profile', :flash => { :error => "Please complete all fields of your profile" }
     else
@@ -46,27 +48,10 @@ class VendorsController < ApplicationController
       end
     end
 
-    # GoogleChart::BarChart.new("600x180", "Codes Data", :horizontal, false) do |bc|
-    #   bc.data "# codes uploaded", [@vendor.uploadedCodes], '080dcc'
-    #   bc.data "Current of Total code = sum of #codes remaining and #codes used", [@vendor.totalCodes], 'a1731d' 
-    #   bc.data "# codes used", [@vendor.usedCodes], 'c53711' 
-    #   bc.data "# codes remaining", [@vendor.unclaimCodes], '0c9200'
-    #   bc.data "# codes removed", [@vendor.removedCodes], '000000'
-    #   bc.show_legend = true
-    #   bc.stacked = false
-    #   bc.data_encoding = :extended
-    #   bc.shape_marker :circle, :color => "000000", :data_set_index => 2, :data_point_index => 4, :pixel_size => 10
-    #   bc.axis :x , :range => [0,@vendor.uploadedCodes]
-    #   @graph =  bc.to_url
-    # end
 
     @hash = {"uploaded" => @vendor.uploadedCodes, "total" => @vendor.totalCodes, "used" => @vendor.usedCodes, "unclaim" => @vendor.unclaimCodes, "removed" => @vendor.removedCodes }
     gon.codes = @hash
 
-
-
-
-  
   end
 
 
@@ -116,10 +101,10 @@ class VendorsController < ApplicationController
       redirect_to '/vendors/home', :flash => { :error => "There's No Unclaimed Codes" }
     else
       contents = Vendor.remove_unclaimed_codes(current_vendor)
-      # redirect_to '/vendors/home', notice: "Unclaimed Codes Successfully Removed"
       send_data contents,  :filename => "Unclaimed_Codes.txt" 
     end
   end
+
 
   def clear_history
     current_vendor=Vendor.find(session[:vendor_id])
