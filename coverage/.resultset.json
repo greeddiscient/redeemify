@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/controllers/application_controller.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -11,7 +11,7 @@
         1,
         null,
         1,
-        115,
+        117,
         null,
         1,
         null,
@@ -19,15 +19,15 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/helpers/application_helper.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/helpers/sessions_helper.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/admin_user.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/admin_user.rb": [
         1,
         null,
         null,
@@ -39,7 +39,7 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/admin_user.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/vendor_codes.rb": [
         1,
         1,
         1,
@@ -50,54 +50,21 @@
         0,
         null,
         null,
-        1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
+        1,
+        1,
+        1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/dashboard.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/vendor_code.rb": [
         1,
-        null,
         1,
-        null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/provider_codes.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/provider_codes.rb": [
         1,
         1,
         1,
@@ -112,27 +79,17 @@
         1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/provider_code.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/provider_code.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/providers.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/admin_user.rb": [
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
         0,
         0,
         0,
@@ -152,7 +109,115 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/provider.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/dashboard.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/users.rb": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/user.rb": [
+        1,
+        1,
+        1,
+        5,
+        5,
+        5,
+        5,
+        5,
+        null,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/providers.rb": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/provider.rb": [
         1,
         1,
         1,
@@ -169,72 +234,7 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/users.rb": [
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null
-      ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/user.rb": [
-        1,
-        1,
-        1,
-        5,
-        5,
-        5,
-        5,
-        5,
-        null,
-        null,
-        null
-      ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/vendor_codes.rb": [
-        1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/vendor_code.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/admin/vendors.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/admin/vendors.rb": [
         1,
         1,
         1,
@@ -274,7 +274,7 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/models/vendor.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/models/vendor.rb": [
         1,
         null,
         1,
@@ -371,7 +371,7 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/controllers/providers_controller.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/controllers/providers_controller.rb": [
         1,
         null,
         1,
@@ -465,15 +465,15 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/controllers/sessions_controller.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
-        35,
+        36,
         1,
         null,
-        35,
-        28,
+        36,
+        29,
         null,
         7,
         7,
@@ -673,7 +673,7 @@
         null,
         null
       ],
-      "/Users/YoungNguyen/Documents/Spring 2015/CS169/Project/iteration4-1/update/thai/redeemify/app/controllers/vendors_controller.rb": [
+      "/home/saasbook/Documents/FinalRedeemify/redeemify/app/controllers/vendors_controller.rb": [
         1,
         1,
         null,
@@ -779,7 +779,7 @@
         null
       ]
     },
-    "timestamp": 1430546522
+    "timestamp": 1435820414
   },
   "RSpec": {
     "coverage": {

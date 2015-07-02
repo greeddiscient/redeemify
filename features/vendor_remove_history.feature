@@ -20,6 +20,7 @@ Scenario:
     And I press "submit" button
     Then I can see "Codes imported"
     When I press "clear-history" link
+    Then show me the page
     Then I can see "Cleared History"
 
 Scenario:
